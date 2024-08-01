@@ -1,0 +1,39 @@
+.footerArea {
+  background-color: #404C96;
+  color: #F7F6FF;
+}
+
+.footerWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 65px;
+  margin: 0 520px 0 180px;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.footerLinks {
+  display: flex;
+  width: 240px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footerLink {
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.localeArea {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.copyRight {
+  text-align: center;
+  padding-bottom: 15px;
+}
