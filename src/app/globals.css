@@ -1,12 +1,12 @@
 /* COMMON */
 
 :root {
-  
+
 }
 
 body {
-  background-color: #D9DCEE;
-  margin: 0;
+    background-color: #D9DCEE;
+    margin: 0;
 }
 
 /* PC */
@@ -14,5 +14,5 @@ body {
 /* SP */
 
 @media (max-width: 768px) {
-  
+
 }

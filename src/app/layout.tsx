@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Noto_Sans_JP } from "next/font/google";
+import Header from "@/components/layouts/Header/Header";
+import Footer from "@/components/layouts/Footer/Footer";
 
-const noto = Noto_Sans_JP({
-  weight: ["400", "700"],
-  style: 'normal',
-  subsets: ['latin'],
-})
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "OTAKA SPACES",
@@ -22,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="jp">
-      <body className={noto.className}>
+      <body className={inter.className}>
         <Header />
         {children}
         <Footer />
