@@ -1,7 +1,4 @@
-type FooterLinkType = {
-  title: string;
-  link: string;
-}
+import { FooterLinkType } from "@/types/Footer/Footer";
 
 export const FooterLinks:FooterLinkType[] = [
   {
