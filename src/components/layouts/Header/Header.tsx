@@ -1,10 +1,10 @@
-import styles from './Header.module.css';
+import { styles } from './Header.module';
 import Link from 'next/link';
 
 export default function Header() {
   return (
     <>
-      <header className={styles.header}>
+      <header className={styles.headerArea}>
         <div className={styles.logo}>OTAKASPACE</div>
         <div className={styles.links}>
           <Link href={'/about'} className={styles.link}>私について</Link>
