@@ -9,7 +9,7 @@ export const styles = {
     wrapper: css({
         display: 'flex',
         paddingTop: '65px',
-        margin: '0 100px',
+        margin: '0 130px',
     }),
     logo: css({
         fontSize: '24px',
@@ -18,7 +18,6 @@ export const styles = {
     linkArea: css({
         display: 'flex',
         flexDirection: 'column',
-        width: '240px',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
         marginBottom: '30px',

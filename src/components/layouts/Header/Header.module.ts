@@ -7,6 +7,10 @@ export const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#F7F8FC',
+        position: 'fixed',
+        width: '100%',
+        zIndex: 999,
+        boxShadow: '0px 0px 10px #e7e8ec',
     }),
     logo: css({
         marginLeft: '20px',
@@ -16,7 +20,6 @@ export const styles = {
     }),
     link: css({
         marginRight: '40px',
-        color: '#333',
         textDecoration: 'none',
         display: 'flex',
         flexDirection: 'column',

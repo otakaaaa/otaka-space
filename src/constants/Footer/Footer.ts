@@ -18,7 +18,7 @@ export const FooterLinks:FooterLinkType[] = [
     link: '/contact',
   },
   {
-    title: 'ニュース',
-    link: '/news',
+    title: 'ブログ',
+    link: '/blog',
   },
 ];
