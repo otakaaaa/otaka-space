@@ -9,7 +9,7 @@ export default function Header() {
         <div className={styles.links}>
           <Link href={'/'} className={styles.link}>TOP</Link>
           <Link href={'/works'} className={styles.link}>実績</Link>
-          <Link href={'/services'} className={styles.link}>事業内容</Link>
+          <Link href={'/#service'} className={styles.link}>事業内容</Link>
           <Link href={'/contact'} className={styles.link}>お問い合わせ</Link>
           <Link href={'/blog'} className={styles.link}>ブログ</Link>
         </div>

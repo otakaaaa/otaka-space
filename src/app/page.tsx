@@ -26,7 +26,7 @@ export default function Home() {
           <MyCard title="ダミーテキスト６" categories={['ダミー']} />
         </Flex>
       </section>
-      <section className={styles.section}>
+      <section className={styles.section} id="service">
         <TopicLabel>事業内容</TopicLabel>
         <Divider my={'md'} />
         <Text my={'xl'} size="xl">WEBの開発をリソース支援いたします。</Text>

@@ -11,7 +11,7 @@ export const FooterLinks:FooterLinkType[] = [
   },
   {
     title: '事業内容',
-    link: '/services',
+    link: '/#service',
   },
   {
     title: 'お問い合わせ',
