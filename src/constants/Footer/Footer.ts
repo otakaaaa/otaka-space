@@ -2,16 +2,16 @@ import { FooterLinkType } from "@/types/Footer/Footer";
 
 export const FooterLinks:FooterLinkType[] = [
   {
-    title: 'ABOUT',
-    link: '/about',
-  },
-  {
-    title: '事業内容',
-    link: '/services',
+    title: 'TOP',
+    link: '/',
   },
   {
     title: '実績',
     link: '/works',
+  },
+  {
+    title: '事業内容',
+    link: '/services',
   },
   {
     title: 'お問い合わせ',

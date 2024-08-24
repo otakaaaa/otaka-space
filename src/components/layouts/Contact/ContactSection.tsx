@@ -3,7 +3,7 @@ import { css } from "../../../../styled-system/css"
 
 export default function ContactSection() {
     return (
-        <Center bg={'#F1E859'}>
+        <Center bg={'#dadcf1'}>
             <Stack align='center'>
                 <Text size="xs" mt={50} mb={15}>お問い合わせ</Text>
                 <Text mb={10} className={styles.textWid}>WEBサイト制作・アプリ開発のご相談などお問い合わせはこちら</Text>
