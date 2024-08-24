@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { styles } from './page.module'
-import { Flex, Divider, Text, Stack } from "@mantine/core";
+import { Flex, Divider, Text, Stack, Center } from "@mantine/core";
 import MyCard from "@/components/elements/MyCard";
 import TopicLabel from "@/components/elements/TopicLabel";
 
@@ -29,15 +29,24 @@ export default function Home() {
       <section className={styles.section}>
         <TopicLabel>事業内容</TopicLabel>
         <Divider my={'md'} />
-        <Text my={'md'}>WEBサイト制作、WEBアプリの開発を共創いたします。</Text>
-        <Stack align='center' justify="center" gap={'md'} mb={'xl'}>
-          <Text my={'md'} size="xl" className={styles.serviceTitle}>WEBサイト制作</Text>
+        <Text my={'xl'} size="xl">WEBの開発をリソース支援いたします。</Text>
+        <Center mb={'sm'}>
           <Image src={'/top/dummy-mainview.png'} alt="" className={styles.serviceView} width={100} height={300} />
-        </Stack>
-        <Stack align='center' justify="center" gap={'md'} mb={'xl'}>
-          <Text my={'md'} size="xl" className={styles.serviceTitle}>WEBアプリ開発</Text>
-          <Image src={'/top/dummy-mainview.png'} alt="" className={styles.serviceView} width={100} height={300} />
-        </Stack>
+        </Center>
+        <Flex>
+          <Stack>
+            <Text my={'md'} size="md" className={styles.serviceTitle}>フロントエンド開発</Text>
+            <Text my={'md'} size="md" className={styles.serviceTitle}>バックエンド開発</Text>
+            <Text my={'md'} size="md" className={styles.serviceTitle}>ECサイト構築</Text>
+            <Text my={'md'} size="md" className={styles.serviceTitle}>CMS構築</Text>
+          </Stack>
+          <Stack>
+            <Text my={'md'} size="md" className={styles.serviceDetail}>・・・JavaScript、TypeScript、React、Next.js、Vue.js等</Text>
+            <Text my={'md'} size="md" className={styles.serviceDetail}>・・・PHP、Node.js、Ruby、CakePHP、Laravel、Express、Ruby on Rails等</Text>
+            <Text my={'md'} size="md" className={styles.serviceDetail}>・・・STORES、Kuroco等</Text>
+            <Text my={'md'} size="md" className={styles.serviceDetail}>・・・WordPress、Kuroco等</Text>
+          </Stack>
+        </Flex>
       </section>
     </main>
   );

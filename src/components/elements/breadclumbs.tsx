@@ -7,7 +7,7 @@ type BreadcrumbsType = {
     items: BreadcrumbItemsType[]
 }
 
-type BreadcrumbItemsType = {
+export type BreadcrumbItemsType = {
     label: string;
     href: string;
 }

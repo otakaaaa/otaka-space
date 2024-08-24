@@ -1,10 +1,10 @@
 import './page.module.css';
-import Breadcrumbs from '@/components/elements/breadclumbs';
+import Breadcrumbs, { BreadcrumbItemsType } from '@/components/elements/breadclumbs';
 import { Box, Flex } from '@mantine/core';
 import MyCard from '@/components/elements/MyCard';
 import TopicLabel from '@/components/elements/TopicLabel';
 
-const breadclumbsLinks = [
+const breadclumbsLinks: BreadcrumbItemsType[] = [
   { label: 'TOP', href: '/' },
   { label: '実績一覧', href: '/works' },
 ];

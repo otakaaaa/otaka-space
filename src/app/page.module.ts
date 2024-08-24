@@ -9,10 +9,13 @@ export const styles = {
         padding: '50px 130px',
     }),
     serviceView: css({
-        width: '100%',
-        height: '400px',
+        width: '60%',
+        height: '200px',
     }),
     serviceTitle: css({
         borderBottom: '1px solid #333',
+    }),
+    serviceDetail: css({
+
     }),
 }
