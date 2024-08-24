@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
-import { css } from '../../../../styled-system/css';
+import { css } from '../../../styled-system/css';
 import { Fragment } from 'react';
 
 type MyCardType = {
@@ -12,7 +12,7 @@ type MyCardType = {
 
 export default function MyCard(props: MyCardType) {
     return (
-        <Card className={css({width: '32%'})} shadow="sm" padding="lg" radius="md" withBorder>
+        <Card className={css({width: '32%'})} shadow="sm" padding="lg" radius="md" withBorder mb={30}>
             <Card.Section>
                 <Image
                     src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"

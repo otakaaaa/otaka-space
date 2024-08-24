@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { styles } from './page.module'
 import { Flex, Divider, Text, Stack } from "@mantine/core";
-import MyCard from "@/components/elements/card/MyCard";
+import MyCard from "@/components/elements/MyCard";
+import TopicLabel from "@/components/elements/TopicLabel";
 
 export default function Home() {
   return (
     <main>
       <Image src={'/top/dummy-mainview.png'} className={styles.mainView} alt="" width={100} height={300} />
       <section className={styles.section}>
-        <Text fw={'bold'} size="xl" className={styles.title}>実績</Text>
+        <TopicLabel>実績</TopicLabel>
         <Divider my={'md'} />
         <Flex
-          mih={50}
           gap="md"
           justify="center"
           align="start"
@@ -27,7 +27,7 @@ export default function Home() {
         </Flex>
       </section>
       <section className={styles.section}>
-        <Text fw={'bold'} size="xl" className={styles.title}>事業内容</Text>
+        <TopicLabel>事業内容</TopicLabel>
         <Divider my={'md'} />
         <Text my={'md'}>WEBサイト制作、WEBアプリの開発を共創いたします。</Text>
         <Stack align='center' justify="center" gap={'md'} mb={'xl'}>
