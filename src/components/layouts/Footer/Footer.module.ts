@@ -26,6 +26,9 @@ export const styles = {
         textDecoration: 'none',
         color: '#fff',
         marginBottom: '20px',
+        _hover: {
+            scale: 1.1,
+        },
     }),
     localeArea: css({
         marginBottom: '80px',

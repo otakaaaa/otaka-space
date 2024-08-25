@@ -23,8 +23,9 @@ export const styles = {
         textDecoration: 'none',
         display: 'flex',
         flexDirection: 'column',
-        '&:hover': {
+        _hover: {
             opacity: 0.7,
+            scale: 1.1,
         },
     }),
 };

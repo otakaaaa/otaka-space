@@ -20,5 +20,8 @@ const styles = {
     }),
     button: css({
         minHeight: '50px',
+        _hover: {
+            scale: 1.1,
+        }
     })
 }
