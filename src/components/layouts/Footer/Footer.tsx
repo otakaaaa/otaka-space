@@ -1,20 +1,29 @@
 import { Fragment } from 'react';
-import styles from './Footer.module.css';
+import { styles } from './Footer.module';
 import Link from 'next/link';
-import { FooterLinks } from '@/constants/Footer/Footer';
+import { FooterLinks } from '../../../constants/Footer/Footer';
 
 export default function Footer() {
+  const moveLink = () => {
+
+  };
+
   return (
     <>
-      <footer className={styles.footerArea}>
-        <div className={styles.footerWrapper}>
+      <footer className={styles.area}>
+        <div className={styles.wrapper}>
           <div className={styles.logo}>OTAKA SPACE</div>
           <div>
-            <div className={styles.footerLinks}>
+            <div className={styles.linkArea}>
               {
                 FooterLinks.map((link, index) => (
                   <Fragment key={index}>
-                    <Link href={link.link} className={styles.footerLink}>{link.title}</Link>
+                    <Link
+                      href={link.link}
+                      className={styles.link}
+                    >
+                      {link.title}
+                    </Link>
                   </Fragment>
                 ))
               }

@@ -3,9 +3,11 @@ services:
   app:
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: ./docker/Dockerfile
     ports:
       - 3000:3000
     volumes:
       - ./:/app
-    command: sh -c "npm run dev"
+    environment:
+      - WATCHPACK_POLLING=true
+    command: npm run dev

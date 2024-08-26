@@ -1,7 +1,13 @@
+@layer reset, base, tokens, recipes, utilities;
+
 /* COMMON */
 
 :root {
 
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
