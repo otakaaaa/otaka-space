@@ -1,5 +1,5 @@
 import { Center, Text, Box, Stack, Button } from "@mantine/core"
-import { css } from "@/../styled-system/css"
+import { css } from "../../../../styled-system/css"
 
 export default function ContactSection() {
     return (

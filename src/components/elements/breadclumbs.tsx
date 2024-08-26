@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Flex } from "@mantine/core"
 import { Fragment } from "react"
-import { css } from "@/../styled-system/css"
+import { css } from "../../../styled-system/css"
 
 type BreadcrumbsType = {
     items: BreadcrumbItemsType[]
