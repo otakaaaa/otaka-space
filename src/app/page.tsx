@@ -3,11 +3,12 @@ import { styles } from './page.module'
 import { Flex, Divider, Text, Stack, Center } from "@mantine/core";
 import MyCard from "@/components/elements/MyCard";
 import TopicLabel from "@/components/elements/TopicLabel";
+import DummyImg from '../../public/top/dummy-mainview.png'
 
 export default function Home() {
   return (
     <main>
-      <Image src={'/top/dummy-mainview.png'} className={styles.mainView} alt="" width={100} height={300} />
+      <Image src={DummyImg} className={styles.mainView} alt="" width={100} height={300} />
       <section className={styles.section}>
         <TopicLabel>実績</TopicLabel>
         <Divider my={'md'} />
@@ -31,7 +32,7 @@ export default function Home() {
         <Divider my={'md'} />
         <Text my={'xl'} size="xl">WEBの開発をリソース支援いたします。</Text>
         <Center mb={'sm'}>
-          <Image src={'/top/dummy-mainview.png'} alt="" className={styles.serviceView} width={100} height={300} />
+          <Image src={DummyImg} alt="" className={styles.serviceView} width={100} height={300} />
         </Center>
         <Flex>
           <Stack>
