@@ -1,4 +1,4 @@
-import { css } from "@/../styled-system/css"
+import { css } from "../../../styled-system/css"
 import { Flex, Stack, Badge, Text, Radio, Checkbox, NativeSelect, Textarea, TextInput } from "@mantine/core"
 
 type FormRowProps = {

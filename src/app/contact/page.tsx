@@ -28,7 +28,7 @@ export default function Contact() {
           <Space h={'xl'} />
           <FormRow required label='お問い合わせ内容' type='textarea' placeholder='お問い合わせ内容' />
           <Center mt={50}>
-            <Button h={40} w={'30%'} color={'orange'} fw={'600'}>送信</Button>
+            <Button h={40} w={'30%'} color={'orange.5'} fw={'600'}>送信</Button>
           </Center>
         </Container>
       </Box>
