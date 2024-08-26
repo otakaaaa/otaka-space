@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
-import { css } from '../../../styled-system/css';
+import { css } from '@/../styled-system/css';
 import { Fragment } from 'react';
 
 type MyCardType = {
