@@ -1,11 +1,11 @@
 import './page.module.css';
-import Breadcrumbs, { BreadcrumbItemsType } from '@/components/elements/breadclumbs';
+import Breadcrumbs, { BreadcrumbItems } from '@/components/elements/breadclumbs';
 import TopicLabel from '@/components/elements/TopicLabel';
 import { Box, Space } from '@mantine/core';
 import Article, { ArticleItem } from '@/components/elements/Article';
 import { Fragment } from 'react';
 
-const breadclumbsLinks: BreadcrumbItemsType[] = [
+const breadclumbsLinks: BreadcrumbItems[] = [
   { label: 'TOP', href: '/' },
   { label: 'おたかのブログ 記事一覧', href: '/blog' },
 ];
@@ -45,7 +45,7 @@ const articles: ArticleItem[] = [
   },
 ]
 
-export default function News() {
+export default function Blog() {
   return (
     <>
       <Breadcrumbs items={breadclumbsLinks} />

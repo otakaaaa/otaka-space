@@ -1,9 +1,15 @@
 import { styles } from './page.module'
 import { Flex, Divider, Text, Stack, Center, Image } from "@mantine/core";
-import MyCard from "@/components/elements/MyCard";
+import WorkCard from "@/components/elements/WorkCard";
 import TopicLabel from "@/components/elements/TopicLabel";
+import { apiClient } from '@/libs/apiClient';
+import { WorksListResponseApi, WorkDetails } from '@/types/Works/Works';
 
-export default function Home() {
+export default async function Home() {
+  const works: WorksListResponseApi = await apiClient.get('/rcms-api/1/works/list', {})
+    .then((response) => response.data)
+    .catch((error) => console.error('Error:', error));
+
   return (
     <main>
       <Image src={'/top/dummy-mainview.png'} className={styles.mainView} alt="" />
@@ -17,12 +23,10 @@ export default function Home() {
           direction="row"
           wrap="wrap"
         >
-          <MyCard title="ダミーテキスト１ダミーテキスト１ダミーテキスト１" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト２" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト３" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト４" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト５" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト６" categories={['ダミー']} />
+          {works.list.length > 0 &&
+          works.list.map((work: WorkDetails, index: number) => (
+            <WorkCard items={work} key={index} />
+          ))}
         </Flex>
       </section>
       <section className={styles.section} id="service">
