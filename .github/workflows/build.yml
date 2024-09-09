@@ -11,6 +11,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  NEXT_PUBLIC_API_BASE_URL: https://otaka-space.g.kuroco.app
+
 jobs:
   # for Pull Request (exclude merged)
   pullreq_build:
@@ -54,7 +57,7 @@ jobs:
         with:
           name: ${{ steps.get_branch.outputs.sha }}-${{ github.run_id }}
           path: out.zip
-          retention-days: 7
+          retention-days: 2
       - name: Wait for Artifact download
         run: sleep 15
       - name: Webhook
@@ -97,7 +100,7 @@ jobs:
         with:
           name: ${{ github.sha }}-${{ github.run_id }}
           path: out.zip
-          retention-days: 7
+          retention-days: 2
       - name: Webhook
         uses: diverta/workflow-webhook@v3
         env:

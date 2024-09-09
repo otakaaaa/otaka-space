@@ -27,7 +27,7 @@ docker compose run app npm install
 ├─ features/
 │  └─ /post(例)
 │     ├─ api/
-│　　　　　　　　　　│　　　　└─ getPost.ts
+│　　　　└─ getPost.ts
 │     ├─ styles/
 │     ├─ components/
 │        ├─ Post.tsx

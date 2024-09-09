@@ -1,15 +1,21 @@
 import './page.module.css';
-import Breadcrumbs, { BreadcrumbItemsType } from '@/components/elements/breadclumbs';
+import Breadcrumbs, { BreadcrumbItems } from '@/components/elements/breadclumbs';
 import { Box, Flex } from '@mantine/core';
-import MyCard from '@/components/elements/MyCard';
+import WorkCard from '@/components/elements/WorkCard';
 import TopicLabel from '@/components/elements/TopicLabel';
+import { apiClient } from "@/libs/apiClient";
+import { WorksListResponseApi, WorkDetails } from '@/types/Works/Works';
 
-const breadclumbsLinks: BreadcrumbItemsType[] = [
+const breadclumbsLinks: BreadcrumbItems[] = [
   { label: 'TOP', href: '/' },
   { label: '実績一覧', href: '/works' },
 ];
 
-export default function Achievements() {
+export default async function Works() {
+  const works: WorksListResponseApi = await apiClient.get('/rcms-api/1/works/list', {})
+    .then((response) => response.data)
+    .catch((error) => console.error('Error:', error));
+
   return (
     <>
       <Breadcrumbs items={breadclumbsLinks} />
@@ -23,18 +29,10 @@ export default function Achievements() {
           direction="row"
           wrap="wrap"
         >
-          <MyCard title="ダミーテキスト１ダミーテキスト１ダミーテキスト１" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト２" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト３" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト４" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト５" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト６" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト７" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト８" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト９" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト１０" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト１１" categories={['ダミー']} />
-          <MyCard title="ダミーテキスト１２" categories={['ダミー']} />
+          {works.list.length > 0 &&
+          works.list.map((work: WorkDetails, index: number) => (
+            <WorkCard items={work} key={index} />
+          ))}
         </Flex>
       </Box>
     </>

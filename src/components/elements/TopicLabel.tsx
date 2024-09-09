@@ -3,6 +3,7 @@ import { Text } from "@mantine/core"
 
 type TopicLabelType = {
     children: string,
+    mb?: string,
 }
 
 export default function TopicLabel(props: TopicLabelType) {
@@ -13,6 +14,6 @@ export default function TopicLabel(props: TopicLabelType) {
     })
 
     return (
-        <Text className={style} size="xl" fw={'bold'}>{props.children}</Text>
+        <Text className={style} size="xl" fw={'bold'} mb={props.mb}>{props.children}</Text>
     )
 }

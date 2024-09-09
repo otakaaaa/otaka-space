@@ -1,10 +1,10 @@
 import { styles } from './page.module';
-import Breadcrumbs, { BreadcrumbItemsType } from '@/components/elements/breadclumbs';
+import Breadcrumbs, { BreadcrumbItems } from '@/components/elements/breadclumbs';
 import { Box, Container, Space, Button, Center } from '@mantine/core';
 import TopicLabel from '@/components/elements/TopicLabel';
 import FormRow from '@/components/elements/FormRow';
 
-const breadclumbsLinks: BreadcrumbItemsType[] = [
+const breadclumbsLinks: BreadcrumbItems[] = [
   { label: 'TOP', href: '/' },
   { label: 'お問い合わせ', href: '/contact' },
 ];

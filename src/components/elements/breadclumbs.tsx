@@ -4,10 +4,10 @@ import { Fragment } from "react"
 import { css } from "../../../styled-system/css"
 
 type BreadcrumbsType = {
-    items: BreadcrumbItemsType[]
+    items: BreadcrumbItems[]
 }
 
-export type BreadcrumbItemsType = {
+export type BreadcrumbItems = {
     label: string;
     href: string;
 }
