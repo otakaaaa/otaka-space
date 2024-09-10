@@ -4,6 +4,7 @@ import WorkCard from "@/components/elements/WorkCard";
 import TopicLabel from "@/components/elements/TopicLabel";
 import { apiClient } from '@/libs/apiClient';
 import { WorksListResponseApi, WorkDetails } from '@/types/Works/Works';
+import HeroSection from '@/components/layouts/HeroSection/HeroSection';
 
 export default async function Home() {
   const works: WorksListResponseApi = await apiClient.get('/rcms-api/1/works/list', {})
@@ -12,7 +13,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Image src={'/top/dummy-mainview.png'} className={styles.mainView} alt="" />
+      <HeroSection />
       <section className={styles.section}>
         <TopicLabel>実績</TopicLabel>
         <Divider my={'md'} />

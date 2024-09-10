@@ -1,7 +1,6 @@
 .header {
     height: rem(84px);
     background-color: var(--site-bg-color);
-    border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
 
 .inner {
@@ -41,7 +40,7 @@
 
 &[data-active] {
     color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-    border-bottom-color: var(--site-purple);
+    border-bottom-color: var(--site-accent-color);
 }
 }
 
@@ -64,7 +63,7 @@
 
 .smMenu {
     width: 100%;
-    color: var(--site-purple);
+    color: var(--site-accent-color);
     display: flex;
     justify-content: center;
     align-items: center;
