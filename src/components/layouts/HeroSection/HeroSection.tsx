@@ -13,7 +13,7 @@ export default function HeroSection() {
                 <BsGithub color="#404C96" cursor={'pointer'} />
             </Stack>
             <Image src={'/top/dummy-mainview.png'} alt="メイン画像" className={styles.mainView} />
-            <Center w={'30px'}>
+            <Center w={'3.125vw'}>
                 <span className={styles.text}>SCROLL</span>
                 <div className={styles.chevron}></div>
                 <div className={styles.chevron}></div>

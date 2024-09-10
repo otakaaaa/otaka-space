@@ -22,7 +22,7 @@ export default function WorkCard(props: MyCardType) {
                 <Image
                     src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
                     alt="Norway"
-                    className={css({width: '30%', height: '160px'})}
+                    className={css({width: '30%', height: '12.5vw'})}
                 />
             </Card.Section>
 

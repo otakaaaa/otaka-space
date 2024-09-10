@@ -47,7 +47,7 @@ export default async function WorksDetail({ params } : { params: { id: string } 
         <>
             <Breadcrumbs items={breadclumbsLinks} />
             <Box px={130} m={0}>
-                <TopicLabel mb="20px">{work.details.subject}</TopicLabel>
+                <TopicLabel mb="1.563vw">{work.details.subject}</TopicLabel>
                 <Flex mb={20}>
                     {/* {work.categories.length > 0 &&
                     work.categories.map((category: any, index: number) => (
