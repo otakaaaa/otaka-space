@@ -1,0 +1,105 @@
+.header {
+    height: rem(84px);
+    background-color: var(--site-bg-color);
+}
+
+.inner {
+    height: rem(84px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links {
+    padding-top: var(--mantine-spacing-lg);
+    height: rem(84px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mainLinks {
+    margin-right: calc(var(--mantine-spacing-sm) * -1);
+}
+
+.mainLink {
+    text-transform: uppercase;
+    font-size: var(--mantine-font-size-xs);
+    color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-1));
+    padding: rem(7px) var(--mantine-spacing-sm);
+    font-weight: 700;
+    border-bottom: rem(2px) solid transparent;
+    transition:
+        border-color 100ms ease,
+        color 100ms ease;
+
+    @mixin hover {
+        color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+        text-decoration: none;
+    }
+
+    &[data-active] {
+        color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+        border-bottom-color: var(--site-accent-color);
+    }
+}
+
+.secondaryLink {
+    color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-1));
+    font-size: var(--mantine-font-size-xs);
+    text-transform: uppercase;
+    transition: color 100ms ease;
+
+    @mixin hover {
+        color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+        text-decoration: none;
+    }
+}
+
+.burger {
+    position: fixed;
+    right: 3vw;
+}
+
+.smMenu {
+    width: 100%;
+    color: var(--site-accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 900;
+    padding: 1.563vw;
+    top: 0;
+    left: 0;
+    animation: fadeInAnimation easy 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.headerInner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 1.406vw;
+    padding: 5.4vh 0;
+    background-color: #f5f5f5;
+    padding: 5.4vh 0;
+}
+
+.headerLogo {
+    font-size: 2.109vw;
+    margin-bottom: 6vh;
+}
+
+@keyframes fadeInAnimation { 
+    0% {
+        opacity: 0; 
+    } 
+    100% {
+        opacity: 1; 
+    } 
+}

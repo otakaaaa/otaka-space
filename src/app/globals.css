@@ -3,7 +3,10 @@
 /* COMMON */
 
 :root {
-
+    --site-bg-color: #F7F8FC;
+    --site-black: #333;
+    --site-white: #fff;
+    --site-accent-color: #404C96;
 }
 
 html {
@@ -11,7 +14,7 @@ html {
 }
 
 body {
-    background-color: #D9DCEE;
+    background-color: var(--site-bg-color) !important;
     margin: 0;
 }
 

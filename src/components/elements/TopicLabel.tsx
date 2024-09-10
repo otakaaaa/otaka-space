@@ -10,7 +10,7 @@ export default function TopicLabel(props: TopicLabelType) {
     const style = css({
         backgroundImage: 'url(../../public/top/topic-bg-purple.png)',
         backgroundRepeat: 'no-repeat',
-        backgroundPositionY: '22px',
+        backgroundPositionY: '1.719vw',
     })
 
     return (

@@ -30,7 +30,7 @@ export default function Breadcrumbs(props: BreadcrumbsType) {
 
 const styles = {
     link: css({
-        fontSize: '12px',
+        fontSize: '0.938vw',
         _hover: {
             cursor: 'pointer',
             opacity: 0.7,
