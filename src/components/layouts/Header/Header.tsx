@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const mainLinks = [
+  { link: '/', label: 'TOP' },
   { link: '/works', label: '実績' },
   { link: '/#service', label: '事業内容' },
   { link: '/contact', label: 'お問い合わせ' },
