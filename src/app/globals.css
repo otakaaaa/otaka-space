@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    background-color: #D9DCEE;
+    background-color: var(--site-bg-color) !important;
     margin: 0;
 }
 
