@@ -28,14 +28,12 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider theme={theme}>
-          <Header />
+        <Header />
           <MantineProvider theme={theme}>
             {children}
             <ContactSection />
           </MantineProvider>
-          <Footer />
-        </MantineProvider>
+        <Footer />
       </body>
     </html>
   );
