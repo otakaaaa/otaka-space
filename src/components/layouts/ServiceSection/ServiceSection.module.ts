@@ -2,7 +2,9 @@ import { css } from "../../../../styled-system/css";
 
 export const styles = {
     section: css({
-        padding: '3.906vw 10.156vw',
+        display: 'flex',
+        justifyContent: 'space-between',
+        padding: '3.906vw 3.125vw',
     }),
     serviceView: css({
         width: '60%',
