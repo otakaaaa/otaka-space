@@ -2,6 +2,8 @@ import { css } from "../../../../styled-system/css";
 
 export const styles = {
     section: css({
-        padding: '3.906vw 10.156vw',
+        display: 'flex',
+        padding: '3.906vw 3.125vw',
+        justifyContent: 'space-between',
     }),
 }

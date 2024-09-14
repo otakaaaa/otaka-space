@@ -1,10 +1,10 @@
 'use client';
 
-import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
+import { Card, Image, Text, Badge, Button, Group, Box } from '@mantine/core';
 import { css } from '../../../styled-system/css';
-import { Fragment } from 'react';
 import { useRouter } from 'next/navigation';
 import { WorkDetails } from '@/types/Works/Works';
+import parse from 'html-react-parser';
 
 interface MyCardType {
     items: WorkDetails;
@@ -17,12 +17,12 @@ export default function WorkCard(props: MyCardType) {
     }
 
     return (
-        <Card className={css({width: '32%'})} shadow="sm" padding="lg" radius="md" withBorder mb={30}>
+        <Card className={css({width: '27.559vw'})} shadow="sm" padding="lg" radius="md" withBorder mb={30}>
             <Card.Section>
                 <Image
-                    src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-                    alt="Norway"
-                    className={css({width: '30%', height: '12.5vw'})}
+                    src={props.items.image.url_org}
+                    alt={props.items.image.desc}
+                    className={css({width: '100%', height: 'auto'})}
                 />
             </Card.Section>
 
@@ -38,12 +38,12 @@ export default function WorkCard(props: MyCardType) {
 
             {
                 props.items.contents &&
-                <Text size="sm" c="dimmed">
-                    {props.items.contents}
-                </Text>
+                <Box fz={'sm'} c={'dimmed'}>
+                    {parse(props.items.contents)}
+                </Box>
             }
 
-            <Button onClick={() => handleClick(props.items.topics_id)} color="blue" fullWidth mt="md" radius="md">
+            <Button onClick={() => handleClick(props.items.topics_id)} color="#404C96" fullWidth mt="md" radius="md">
                 詳細を見る
             </Button>
         </Card>
