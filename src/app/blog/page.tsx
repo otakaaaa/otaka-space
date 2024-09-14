@@ -11,7 +11,7 @@ import { css } from '../../../styled-system/css';
 
 const breadclumbsLinks: BreadcrumbItems[] = [
   { label: 'TOP', href: '/' },
-  { label: 'ブログ', href: '/blog' },
+  { label: 'ブログ一覧', href: '/blog' },
 ];
 
 export default async function Blog() {
