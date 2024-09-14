@@ -52,6 +52,7 @@ export default function Header() {
           className={classes.burger}
           size="sm"
           hiddenFrom="sm"
+          color='#404C96'
         />
         {opened && (
           <Box className={classes.smMenu} hiddenFrom="sm">
