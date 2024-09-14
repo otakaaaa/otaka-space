@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, Image, Text, Badge, Button, Group, Box } from '@mantine/core';
+import { Card, Image, Text, Button, Stack, Box } from '@mantine/core';
 import { css } from '../../../styled-system/css';
 import { useRouter } from 'next/navigation';
 import { WorkDetails } from '@/types/Works/Works';
@@ -26,15 +26,11 @@ export default function WorkCard(props: MyCardType) {
                 />
             </Card.Section>
 
-            <Group justify="space-between" mt="md" mb="xs">
-                <Text fw={500}>{props.items.subject}</Text>
-                {/* {props.items.categories &&
-                props.items.categories.map((category, index) => (
-                    <Fragment key={index}>
-                        <Badge color="pink">{category}</Badge>
-                    </Fragment>
-                ))} */}
-            </Group>
+
+            <Stack mt="md" mb="xs" gap={'3px'}>
+                <Text fz={'14px'}>{props.items.ymd}</Text>
+                <Text fw={'bold'}>{props.items.subject}</Text>
+            </Stack>
 
             {
                 props.items.contents &&
