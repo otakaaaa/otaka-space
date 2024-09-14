@@ -12,7 +12,6 @@ export default function TopicLabel(props: TopicLabelType) {
         backgroundImage: 'url(../../public/top/topic-bg-purple.png)',
         backgroundRepeat: 'no-repeat',
         backgroundPositionY: '1.719vw',
-        letterSpacing: '0.18vw',
         padding: '0 20px !important',
         whiteSpace: 'nowrap',
         fontSize: '22px !important',
