@@ -1,10 +1,11 @@
 import './page.module.css';
 import Breadcrumbs, { BreadcrumbItems } from '@/components/elements/breadclumbs';
-import { Box, Flex } from '@mantine/core';
+import { Flex, Stack, Divider } from '@mantine/core';
 import WorkCard from '@/components/elements/WorkCard';
 import TopicLabel from '@/components/elements/TopicLabel';
 import { apiClient } from "@/libs/apiClient";
 import { WorksListResponseApi, WorkDetails } from '@/types/Works/Works';
+import { FaTrophy } from "react-icons/fa";
 
 const breadclumbsLinks: BreadcrumbItems[] = [
   { label: 'TOP', href: '/' },
@@ -19,12 +20,15 @@ export default async function Works() {
   return (
     <>
       <Breadcrumbs items={breadclumbsLinks} />
-      <Box px={130} m={0}>
-        <TopicLabel>実績一覧</TopicLabel>
+      <Flex px={'8vw'} m={0} justify={'space-between'}>
+        <Stack w={'20%'}>
+          <TopicLabel icon={<FaTrophy />}>実績</TopicLabel>
+          <Divider my={'md'} />
+        </Stack>
         <Flex
-          my={60}
+          w={'75%'}
+          mb={60}
           gap="md"
-          justify="center"
           align="start"
           direction="row"
           wrap="wrap"
@@ -34,7 +38,7 @@ export default async function Works() {
             <WorkCard items={work} key={index} />
           ))}
         </Flex>
-      </Box>
+      </Flex>
     </>
   );
 }
