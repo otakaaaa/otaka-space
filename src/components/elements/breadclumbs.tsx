@@ -14,7 +14,7 @@ export type BreadcrumbItems = {
 
 export default function Breadcrumbs(props: BreadcrumbsType) {
     return (
-        <Flex my={'md'} px={130}>
+        <Flex my={'md'} px={'8vw'}>
             {props.items.map((item, index) => (
                 <Fragment key={index}>
                     <Link href={item.href} className={styles.link}>
@@ -30,7 +30,7 @@ export default function Breadcrumbs(props: BreadcrumbsType) {
 
 const styles = {
     link: css({
-        fontSize: '0.938vw',
+        fontSize: '12px',
         _hover: {
             cursor: 'pointer',
             opacity: 0.7,

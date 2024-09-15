@@ -1,4 +1,4 @@
-import './page.module.css';
+import { styles } from './page.module';
 import Breadcrumbs, { BreadcrumbItems } from '@/components/elements/breadclumbs';
 import { Flex, Stack, Divider } from '@mantine/core';
 import WorkCard from '@/components/elements/WorkCard';
@@ -20,18 +20,18 @@ export default async function Works() {
   return (
     <>
       <Breadcrumbs items={breadclumbsLinks} />
-      <Flex px={'8vw'} m={0} justify={'space-between'}>
-        <Stack w={'20%'}>
+      <Flex px={'8vw'} m={0} className={styles.container}>
+        <Stack className={styles.topicWrap}>
           <TopicLabel icon={<FaTrophy />}>実績</TopicLabel>
           <Divider my={'md'} />
         </Stack>
         <Flex
-          w={'75%'}
           mb={60}
           gap="md"
           align="start"
           direction="row"
           wrap="wrap"
+          className={styles.workCardWrap}
         >
           {works.list.length > 0 &&
           works.list.map((work: WorkDetails, index: number) => (
