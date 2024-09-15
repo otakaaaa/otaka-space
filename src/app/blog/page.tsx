@@ -1,4 +1,4 @@
-import './page.module.css';
+import { styles } from './page.module';
 import Breadcrumbs, { BreadcrumbItems } from '@/components/elements/breadclumbs';
 import TopicLabel from '@/components/elements/TopicLabel';
 import { Flex, Button, Space, Stack, Divider } from '@mantine/core';
@@ -8,6 +8,7 @@ import { apiClient } from '@/libs/apiClient';
 import { BlogListResponseApi, BlogDetail, Tag } from '@/types/Blog/blog';
 import { BiNotepad } from "react-icons/bi";
 import { css } from '../../../styled-system/css';
+import { DivPC, DivSP } from '@/components/layouts/MediaQuery/MediaQuery';
 
 const breadclumbsLinks: BreadcrumbItems[] = [
   { label: 'TOP', href: '/' },
@@ -34,17 +35,19 @@ export default async function Blog() {
   return (
     <>
       <Breadcrumbs items={breadclumbsLinks} />
-      <Flex px={'8vw'} m={0} justify={'space-between'}>
-        <Stack w={'20%'}>
+      <Flex px={'8vw'} m={0} className={styles.container}>
+        <Stack className={styles.topicWrap}>
           <TopicLabel icon={<BiNotepad />}>ブログ</TopicLabel>
           <Divider my={'md'} />
-          {uniqueTags && uniqueTags.length > 0 && uniqueTags.map((tag, index) => (
-            <Button w={'fit-content'} fz={'14px'} radius={'50px'} bg={'#404C96'} key={index} className={css({ _hover: {backgroundColor: '#fff !important', color: '#404C96 !important', border: '1px solid #404C96 !important'} })}>
-              {tag.label}
-            </Button>
-          ))}
+          <DivPC>
+            {uniqueTags && uniqueTags.length > 0 && uniqueTags.map((tag, index) => (
+              <Button w={'fit-content'} fz={'14px'} radius={'50px'} bg={'#404C96'} key={index} className={css({ _hover: {backgroundColor: '#fff !important', color: '#404C96 !important', border: '1px solid #404C96 !important'} })}>
+                {tag.label}
+              </Button>
+            ))}
+          </DivPC>
         </Stack>
-        <Stack w={'65%'} mb={60}>
+        <Stack mb={60} className={styles.articleWrap}>
           {
             articles && articles.list.length > 0 &&
             articles.list.map((article, index) => (
