@@ -7,11 +7,11 @@ import { FeaturesAsymmetrical } from "@/components/layouts/Features/FeaturesAsym
 export default function ServiceSection() {
     return (
         <section className={styles.section} id="service">
-            <Stack w={'20%'}>
+            <Stack className={styles.topicWrap}>
                 <TopicLabel icon={<FaLaptop />}>事業内容</TopicLabel>
                 <Divider my={'md'} />
             </Stack>
-            <Stack w={'75%'} id="service">
+            <Stack id="service" className={styles.featureWrap}>
                 <FeaturesAsymmetrical />
             </Stack>
         </section>

@@ -1,10 +1,11 @@
-import { css } from "../../../../styled-system/css";
+import { css } from "../../../styled-system/css";
 
 export const styles = {
-    section: css({
+    container: css({
         flexDirection: 'column',
         md: {
             flexDirection: 'row',
+            justifyContent: 'space-between',
         }
     }),
     topicWrap: css({
@@ -16,7 +17,7 @@ export const styles = {
     articleWrap: css({
         width: '100%',
         md: {
-            width: '75%',
+            width: '65%',
         }
-    })
+    }),
 }
