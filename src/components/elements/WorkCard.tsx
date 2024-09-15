@@ -17,7 +17,7 @@ export default function WorkCard(props: MyCardType) {
     }
 
     return (
-        <Card className={css({width: '27.559vw'})} shadow="sm" padding="lg" radius="md" withBorder mb={30}>
+        <Card className={css({width: '100%', md: { width: '27.559vw' }})} shadow="sm" padding="lg" radius="md" withBorder mb={30}>
             <Card.Section>
                 <Image
                     src={props.items.image.url_org}

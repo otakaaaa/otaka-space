@@ -72,7 +72,7 @@
     padding: 1.563vw;
     top: 0;
     left: 0;
-    animation: fadeInAnimation ease 3s;
+    animation: fadeInAnimation ease 0.8s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }

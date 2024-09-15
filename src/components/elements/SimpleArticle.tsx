@@ -8,13 +8,13 @@ interface ArticleProps {
 
 export default function SimpleArticle(props: ArticleProps) {
     return (
-        <Container bg={'#fff'} p={'1.25vw 1.875vw'} className={styles.articleContainer}>
+        <Container bg={'#fff'} w={'100%'} className={styles.articleContainer}>
             <Flex>
                 <Avatar src={'/top/dummy-mainview.png'} alt="" mr={10} />
                 <Box>
-                    <Text size={'1.094vw'} mb={10}>{'satoshi otaka'}</Text>
-                    <Text size={'0.938vw'} mb={15}>{props.items.ymd}</Text>
-                    <Text size={'1.563vw'} fw={'bold'} mb={10}>{props.items.subject}</Text>
+                    <Text size={'14px'} mb={10}>{'satoshi otaka'}</Text>
+                    <Text size={'12px'} mb={15}>{props.items.ymd}</Text>
+                    <Text size={'20px'} fw={'bold'} mb={10}>{props.items.subject}</Text>
                 </Box>
             </Flex>
         </Container>
@@ -23,14 +23,18 @@ export default function SimpleArticle(props: ArticleProps) {
 
 const styles = {
     articleContainer: css({
-        boxShadow: '0px 0px 0.781vw #e7e8ec',
-        borderRadius: '0.625vw',
+        boxShadow: '0px 0px 10px #e7e8ec',
+        borderRadius: '8px',
+        padding: '16px 12px',
         _hover: {
             scale: 1.01,
             cursor: 'pointer',
+        },
+        md: {
+            padding: '16px 24px',
         }
     }),
     tag: css({
-        borderRadius: '0.313vw',
+        borderRadius: '4px',
     })
 }

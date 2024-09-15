@@ -16,10 +16,10 @@ export default function ContactSection() {
 
 const styles = {
     textWid: css({
-        maxWidth: '18.75vw',
+        maxWidth: '240px',
     }),
     button: css({
-        minHeight: '3.906vw',
+        minHeight: '50px',
         _hover: {
             scale: 1.1,
         }

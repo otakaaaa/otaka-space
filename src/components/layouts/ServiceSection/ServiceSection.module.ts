@@ -3,17 +3,23 @@ import { css } from "../../../../styled-system/css";
 export const styles = {
     section: css({
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'space-between',
         padding: '3.906vw 3.125vw',
+        md: {
+            flexDirection: 'row',
+        }
     }),
-    serviceView: css({
-        width: '60%',
-        height: '15.625vw',
+    topicWrap: css({
+        width: '100%',
+        md: {
+            width: '20%',
+        }
     }),
-    serviceTitle: css({
-        borderBottom: '1px solid #333',
-    }),
-    serviceDetail: css({
-
-    }),
+    featureWrap: css({
+        width: '100%',
+        md: {
+            width: '75%',
+        }
+    })
 }
