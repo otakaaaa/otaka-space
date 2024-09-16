@@ -6,7 +6,9 @@
     --site-bg-color: #F7F8FC;
     --site-black: #333;
     --site-white: #fff;
-    --site-accent-color: #404C96;
+    --site-accent-color-1: #404C96;
+    --site-accent-color-2: #DADCF1;
+    --site-accent-color-3: #737FC3;
 }
 
 html {

@@ -1,37 +1,66 @@
-import { styles } from './page.module';
-import Breadcrumbs, { BreadcrumbItems } from '@/components/elements/breadclumbs';
-import { Box, Container, Space, Button, Center } from '@mantine/core';
-import TopicLabel from '@/components/elements/TopicLabel';
-import FormRow from '@/components/elements/FormRow';
+import {
+  Text,
+  Title,
+  SimpleGrid,
+  TextInput,
+  Textarea,
+  Button,
+  Group,
+  ActionIcon,
+} from '@mantine/core';
+import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import { ContactIconsList } from './ContactIcons';
+import classes from './page.module.css';
 
-const breadclumbsLinks: BreadcrumbItems[] = [
-  { label: 'TOP', href: '/' },
-  { label: 'お問い合わせ', href: '/contact' },
-];
+const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
 
 export default function Contact() {
+  const icons = social.map((Icon, index) => (
+    <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
+      <Icon size="1.4rem" stroke={1.5} />
+    </ActionIcon>
+  ));
+
   return (
-    <>
-      <Breadcrumbs items={breadclumbsLinks} />
-      <Box px={130} m={0}>
-        <TopicLabel>お問い合わせ</TopicLabel>
-        <Container fluid mt={60} mb={100}>
-          <FormRow required label='ご用件' type='select' items={['WEBアプリ開発について', 'CMS構築について', 'その他、ご質問・お問い合わせ']} />
-          <Space h={'xl'} />
-          <FormRow required label='会社名' type='textinput' placeholder='会社名' />
-          <Space h={'xl'} />
-          <FormRow required label='お名前' type='textinput' placeholder='お名前' />
-          <Space h={'xl'} />
-          <FormRow label='電話番号' type='textinput' placeholder='電話番号（半角）' />
-          <Space h={'xl'} />
-          <FormRow required label='メールアドレス' type='textinput' placeholder='メールアドレス（半角）' />
-          <Space h={'xl'} />
-          <FormRow required label='お問い合わせ内容' type='textarea' placeholder='お問い合わせ内容' />
-          <Center mt={50}>
-            <Button h={40} w={'30%'} color={'orange.5'} fw={'600'}>送信</Button>
-          </Center>
-        </Container>
-      </Box>
-    </>
+    <div className={classes.wrapper}>
+      <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
+        <div>
+          <Title className={classes.title}>Contact us</Title>
+          <Text className={classes.description} mt="sm" mb={30}>
+            24時間以内に折り返しご連絡いたします。
+          </Text>
+
+          <ContactIconsList />
+
+          <Group mt="xl">{icons}</Group>
+        </div>
+        <div className={classes.form}>
+          <TextInput
+            label="メールアドレス"
+            placeholder="your@email.com"
+            required
+            classNames={{ input: classes.input, label: classes.inputLabel }}
+          />
+          <TextInput
+            label="お名前"
+            placeholder="John Doe"
+            mt="md"
+            classNames={{ input: classes.input, label: classes.inputLabel }}
+          />
+          <Textarea
+            required
+            label="お問い合わせ内容"
+            placeholder="WEBサイト制作のご依頼をしたい"
+            minRows={4}
+            mt="md"
+            classNames={{ input: classes.input, label: classes.inputLabel }}
+          />
+
+          <Group justify="flex-end" mt="md">
+            <Button className={classes.control}>送信</Button>
+          </Group>
+        </div>
+      </SimpleGrid>
+    </div>
   );
 }
