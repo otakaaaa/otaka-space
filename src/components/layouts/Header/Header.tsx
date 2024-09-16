@@ -11,7 +11,7 @@ const mainLinks = [
   { link: '/', label: 'TOP' },
   { link: '/works', label: '実績' },
   { link: '/#service', label: '事業内容' },
-  { link: '/contact', label: 'お問い合わせ' },
+  { link: '/#contact', label: 'お問い合わせ' },
   { link: '/blog', label: 'ブログ' },
 ];
 

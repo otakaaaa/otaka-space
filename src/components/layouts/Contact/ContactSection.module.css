@@ -2,10 +2,9 @@
     min-height: rem(400px);
     background-image: linear-gradient(
         -60deg,
-        var(--site-accent-color-1) 0%,
-        var(--site-accent-color-3) 100%
+        var(--site-accent-color-3) 0%,
+        var(--site-accent-color-4) 100%
     );
-    border-radius: var(--mantine-radius-md);
     padding: calc(var(--mantine-spacing-xl) * 2.5);
 }
 
