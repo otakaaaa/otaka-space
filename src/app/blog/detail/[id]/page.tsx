@@ -4,8 +4,8 @@ import TopicLabel from "@/components/elements/TopicLabel"
 import { styles } from "./page.module"
 import parse from 'html-react-parser'
 import { apiClient } from "@/libs/apiClient"
-import { WorksListResponseApi, WorkDetailsResponseApi } from "@/types/Works/Works"
-import { FaTrophy } from "react-icons/fa";
+import { BlogListResponseApi, BlogDetailResponseApi } from "@/types/Blog/blog"
+import { BiNotepad } from "react-icons/bi";
 
 export const revalidate = 60
 
@@ -13,14 +13,14 @@ export const dynamicParams = true
 
 export async function generateStaticParams() {
     try {
-        const response = await apiClient.get('/rcms-api/1/works/list', {});
-        const works: WorksListResponseApi = response.data;
+        const response = await apiClient.get('/rcms-api/1/blog/list', {});
+        const articles: BlogListResponseApi = response.data;
 
-        if (!works.list || works.list.length === 0) {
+        if (!articles.list || articles.list.length === 0) {
             throw new Error('No works found in API response');
         }
 
-        return works.list.map((work: any) => ({
+        return articles.list.map((work: any) => ({
             id: work.topics_id.toString(),
         }));
     } catch (error) {
@@ -30,32 +30,31 @@ export async function generateStaticParams() {
 }
 
 export default async function WorksDetail({ params } : { params: { id: string } }) {
-    const response = await apiClient.get(`/rcms-api/1/works/detail/${params.id}`, {});
-    const work: WorkDetailsResponseApi = response.data;
+    const response = await apiClient.get(`/rcms-api/1/blog/detail/${params.id}`, {});
+    const article: BlogDetailResponseApi = response.data;
 
-    if (!work) {
+    if (!article) {
         return <Text>Not found</Text>
     }
 
     const breadclumbsLinks: BreadcrumbItems[] = [
         { label: 'TOP', href: '/' },
-        { label: '実績一覧', href: '/works' },
-        { label: work.details.subject, href: `/works/detail/${work.details.topics_id}` },
+        { label: 'ブログ一覧', href: '/blog' },
+        { label: article.details.subject, href: `/blog/detail/${article.details.topics_id}` },
     ]
 
     return (
         <>
             <Breadcrumbs items={breadclumbsLinks} />
             <Box px={'8vw'} m={0}>
-                <TopicLabel icon={<FaTrophy />}>{work.details.subject}</TopicLabel>
+                <TopicLabel icon={<BiNotepad />}>{article.details.subject}</TopicLabel>
                 <Flex mb={20}>
                     {/* {work.categories.length > 0 &&
                     work.categories.map((category: any, index: number) => (
                         <Badge key={index} color='pink'>{category.label}</Badge>
                     ))} */}
                 </Flex>
-                <Image src={work.details.image.url_org} alt={work.details.image.desc} className={styles.mainImage} mb={30} />
-                <Box mb={80}>{parse(work.details.contents)}</Box>
+                <Box mb={80}>{parse(article.details.contents)}</Box>
             </Box>
         </>
     )

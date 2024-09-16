@@ -31,9 +31,14 @@ export default function Breadcrumbs(props: BreadcrumbsType) {
 const styles = {
     link: css({
         fontSize: '12px',
+        whiteSpace: 'nowrap',
         _hover: {
             cursor: 'pointer',
             opacity: 0.7,
+        },
+        _last: {
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
         }
     })
 }
