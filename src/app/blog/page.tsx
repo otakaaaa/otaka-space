@@ -41,7 +41,7 @@ export default async function Blog() {
           <Divider my={'md'} />
           <DivPC>
             {uniqueTags && uniqueTags.length > 0 && uniqueTags.map((tag, index) => (
-              <Button w={'fit-content'} fz={'14px'} radius={'50px'} bg={'#404C96'} key={index} className={css({ _hover: {backgroundColor: '#fff !important', color: '#404C96 !important', border: '1px solid #404C96 !important'} })}>
+              <Button key={index} className={tagStyle}>
                 {tag.label}
               </Button>
             ))}
@@ -62,3 +62,19 @@ export default async function Blog() {
     </>
   );
 }
+
+const tagStyle = css({
+  width: 'fit-content',
+  fontSize: '14px',
+  borderRadius: '50px !important',
+  backgroundColor: '#404C96 !important',
+  marginBottom: '20px',
+  _hover: {
+    backgroundColor: '#fff !important',
+    color: '#404C96 !important',
+    border: '1px solid #404C96 !important',
+  },
+  _last: {
+    marginBottom: 0,
+  }
+})
