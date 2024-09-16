@@ -53,7 +53,7 @@ export default async function Blog() {
             articles.list.map((article, index) => (
               <Fragment key={index}>
                 <Article items={article} />
-                {articles.list.length > index && <Space h={16} />}
+                {articles.list.length - 1 === index && <Space h={16} />}
               </Fragment>
             ))
           }
