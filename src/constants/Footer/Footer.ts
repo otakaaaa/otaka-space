@@ -15,7 +15,7 @@ export const FooterLinks:FooterLinkType[] = [
   },
   {
     title: 'お問い合わせ',
-    link: '/contact',
+    link: '/#contact',
   },
   {
     title: 'ブログ',

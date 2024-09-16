@@ -1,14 +1,23 @@
+'use client';
+
 import { css } from "../../../styled-system/css"
 import { Container, Flex, Avatar, Box, Text } from "@mantine/core"
 import { BlogDetail } from "@/types/Blog/blog"
+import { useRouter } from "next/navigation";
 
 interface ArticleProps {
     items: BlogDetail
 }
 
 export default function SimpleArticle(props: ArticleProps) {
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push(`/blog/detail/${props.items.topics_id}`);
+    }
+
     return (
-        <Container bg={'#fff'} w={'100%'} className={styles.articleContainer}>
+        <Container bg={'#fff'} w={'100%'} className={styles.articleContainer} onClick={handleClick}>
             <Flex>
                 <Avatar src={'/top/dummy-mainview.png'} alt="" mr={10} />
                 <Box>

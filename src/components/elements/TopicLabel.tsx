@@ -11,9 +11,9 @@ export default function TopicLabel(props: TopicLabelType) {
     const textStyle = css({
         backgroundImage: 'url(../../public/top/topic-bg-purple.png)',
         backgroundRepeat: 'no-repeat',
-        backgroundPositionY: '22px',
+        backgroundPositionY: 'bottom',
+        backgroundSize: '100% 40%',
         padding: '0 20px !important',
-        whiteSpace: 'nowrap',
         fontSize: '22px !important',
         width: '-webkit-fill-available',
     })

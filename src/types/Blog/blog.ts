@@ -8,6 +8,12 @@ export interface BlogListResponseApi {
     }
 }
 
+export interface BlogDetailResponseApi {
+    errors: [],
+    messages: [],
+    details: BlogDetail,
+}
+
 export interface BlogDetail {
     topics_id: number,
     ymd: string,
