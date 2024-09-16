@@ -5,6 +5,7 @@ import { styles } from "./page.module"
 import parse from 'html-react-parser'
 import { apiClient } from "@/libs/apiClient"
 import { WorksListResponseApi, WorkDetailsResponseApi } from "@/types/Works/Works"
+import { FaTrophy } from "react-icons/fa";
 
 export const revalidate = 60
 
@@ -35,7 +36,6 @@ export default async function WorksDetail({ params } : { params: { id: string } 
     if (!work) {
         return <Text>Not found</Text>
     }
-    console.log(work);
 
     const breadclumbsLinks: BreadcrumbItems[] = [
         { label: 'TOP', href: '/' },
@@ -46,15 +46,15 @@ export default async function WorksDetail({ params } : { params: { id: string } 
     return (
         <>
             <Breadcrumbs items={breadclumbsLinks} />
-            <Box px={130} m={0}>
-                <TopicLabel mb="1.563vw">{work.details.subject}</TopicLabel>
+            <Box px={'8vw'} m={0}>
+                <TopicLabel icon={<FaTrophy />} mb="1.563vw">{work.details.subject}</TopicLabel>
                 <Flex mb={20}>
                     {/* {work.categories.length > 0 &&
                     work.categories.map((category: any, index: number) => (
                         <Badge key={index} color='pink'>{category.label}</Badge>
                     ))} */}
                 </Flex>
-                <Image src={'/top/dummy-mainview.png'} alt="" className={styles.mainImage} mb={30} />
+                <Image src={work.details.image.url_org} alt={work.details.image.desc} className={styles.mainImage} mb={30} />
                 <Box mb={80}>{parse(work.details.contents)}</Box>
             </Box>
         </>
