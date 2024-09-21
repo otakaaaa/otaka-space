@@ -6,9 +6,9 @@ import Article from '@/components/elements/Article';
 import { Fragment } from 'react';
 import { apiClient } from '@/libs/apiClient';
 import { BlogListResponseApi, BlogDetail, Tag } from '@/types/Blog/blog';
-import { BiNotepad } from "react-icons/bi";
 import { css } from '../../../styled-system/css';
 import { DivPC, DivSP } from '@/components/layouts/MediaQuery/MediaQuery';
+import { FcNews } from "react-icons/fc";
 
 const breadclumbsLinks: BreadcrumbItems[] = [
   { label: 'TOP', href: '/' },
@@ -37,7 +37,7 @@ export default async function Blog() {
       <Breadcrumbs items={breadclumbsLinks} />
       <Flex px={'8vw'} m={0} className={styles.container}>
         <Stack className={styles.topicWrap}>
-          <TopicLabel icon={<BiNotepad />}>ブログ</TopicLabel>
+          <TopicLabel icon={<FcNews />}>ブログ</TopicLabel>
           <Divider my={'md'} />
           <DivPC>
             {uniqueTags && uniqueTags.length > 0 && uniqueTags.map((tag, index) => (

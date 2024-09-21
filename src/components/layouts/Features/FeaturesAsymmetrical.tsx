@@ -1,7 +1,7 @@
 import { Text, SimpleGrid, Container } from '@mantine/core';
 import classes from './FeaturesAsymmetrical.module.css';
-import { FaRegWindowRestore } from "react-icons/fa";
-import { TbBrowser } from "react-icons/tb";
+import { BsCreditCard } from "react-icons/bs";
+import { FaGraduationCap } from "react-icons/fa6";
 import parse from 'html-react-parser';
 
 interface FeatureProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -29,14 +29,14 @@ function Feature({ icon: Icon, title, description, className, ...others }: Featu
 
 const mockdata = [
     {
-        icon: <FaRegWindowRestore fontSize={'38px'} color='#404C96' />,
-        title: 'WEBサイト制作',
-        description: 'ホームページ、LP、ECサイトなどの新規構築からリニューアルまで幅広く対応いたします。<br/><br>・ユーザビリティの優れたUI/UX<br>・レスポンシブ対応<br>・マーケティング、導線設計、SEOなど<br><br>以上の観点から総合力の高いHPを目指します。',
+        icon: <BsCreditCard fontSize={'38px'} color='#404C96' />,
+        title: '資格',
+        description: 'Coming Soon...',
     },
     {
-        icon: <TbBrowser fontSize={'38px'} color='#404C96' />,
-        title: 'WEBアプリ開発',
-        description: '要件定義、設計から構築、テスト、保守まで幅広くスピーディーに対応いたします。<br><br>日々新しい技術が生まれる中で、キャッチアップを行いながら高品質なアプリ開発を提供いたします。',
+        icon: <FaGraduationCap fontSize={'38px'} color='#404C96' />,
+        title: '略歴',
+        description: '1998年　宮崎県都城市生まれ<br/>2022年　宮崎大学工学部電気システム工学科 卒業<br/>2022年　日本情報クリエイト株式会社でWebエンジニアとしてキャリアをスタート<br/>2024年　株式会社はばたーくでWebエンジニアとして従事',
     },
 ];
 

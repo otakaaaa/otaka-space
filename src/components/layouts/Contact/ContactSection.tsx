@@ -8,11 +8,11 @@ import {
     Group,
     ActionIcon,
 } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import { IconBrandX, IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react';
 import { ContactIconsList } from './ContactIcons';
 import classes from './ContactSection.module.css';
 
-const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
+const social = [IconBrandX, IconBrandGithub, IconBrandInstagram];
 
 export default function ContactSection() {
     const icons = social.map((Icon, index) => (
@@ -25,9 +25,9 @@ export default function ContactSection() {
         <div id='contact' className={classes.wrapper}>
             <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
             <div>
-                <Title className={classes.title}>Contact us</Title>
+                <Title className={classes.title}>Contact me</Title>
                 <Text className={classes.description} mt="sm" mb={30}>
-                24時間以内に折り返しご連絡いたします。
+                    24時間以内に折り返しご連絡いたします。
                 </Text>
 
                 <ContactIconsList />

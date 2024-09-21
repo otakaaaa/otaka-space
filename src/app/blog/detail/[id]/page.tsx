@@ -5,7 +5,7 @@ import { styles } from "./page.module"
 import parse from 'html-react-parser'
 import { apiClient } from "@/libs/apiClient"
 import { BlogListResponseApi, BlogDetailResponseApi } from "@/types/Blog/blog"
-import { BiNotepad } from "react-icons/bi";
+import { FcNews } from "react-icons/fc";
 
 export const revalidate = 60
 
@@ -17,14 +17,14 @@ export async function generateStaticParams() {
         const articles: BlogListResponseApi = response.data;
 
         if (!articles.list || articles.list.length === 0) {
-            throw new Error('No works found in API response');
+            throw new Error('No blogs found in API response');
         }
 
         return articles.list.map((work: any) => ({
             id: work.topics_id.toString(),
         }));
     } catch (error) {
-        console.error('Failed to fetch works:', error);
+        console.error('Failed to fetch blogs:', error);
         return [];
     }
 }
@@ -47,7 +47,7 @@ export default async function WorksDetail({ params } : { params: { id: string } 
         <>
             <Breadcrumbs items={breadclumbsLinks} />
             <Box px={'8vw'} m={0}>
-                <TopicLabel icon={<BiNotepad />}>{article.details.subject}</TopicLabel>
+                <TopicLabel icon={<FcNews />}>{article.details.subject}</TopicLabel>
                 <Flex mb={20}>
                     {/* {work.categories.length > 0 &&
                     work.categories.map((category: any, index: number) => (

@@ -4,8 +4,8 @@ import TopicLabel from "@/components/elements/TopicLabel"
 import { styles } from "./page.module"
 import parse from 'html-react-parser'
 import { apiClient } from "@/libs/apiClient"
-import { WorksListResponseApi, WorkDetailsResponseApi } from "@/types/Works/Works"
-import { FaTrophy } from "react-icons/fa";
+import { ServiceListResponseApi, ServiceDetailsResponseApi } from "@/types/Service/Service"
+import { FcServices } from "react-icons/fc";
 
 export const revalidate = 60
 
@@ -13,25 +13,25 @@ export const dynamicParams = true
 
 export async function generateStaticParams() {
     try {
-        const response = await apiClient.get('/rcms-api/1/works/list', {});
-        const works: WorksListResponseApi = response.data;
+        const response = await apiClient.get('/rcms-api/1/services/list', {});
+        const services: ServiceListResponseApi = response.data;
 
-        if (!works.list || works.list.length === 0) {
-            throw new Error('No works found in API response');
+        if (!services.list || services.list.length === 0) {
+            throw new Error('No services found in API response');
         }
 
-        return works.list.map((work: any) => ({
+        return services.list.map((work: any) => ({
             id: work.topics_id.toString(),
         }));
     } catch (error) {
-        console.error('Failed to fetch works:', error);
+        console.error('Failed to fetch services:', error);
         return [];
     }
 }
 
 export default async function WorksDetail({ params } : { params: { id: string } }) {
-    const response = await apiClient.get(`/rcms-api/1/works/detail/${params.id}`, {});
-    const work: WorkDetailsResponseApi = response.data;
+    const response = await apiClient.get(`/rcms-api/1/services/detail/${params.id}`, {});
+    const work: ServiceDetailsResponseApi = response.data;
 
     if (!work) {
         return <Text>Not found</Text>
@@ -39,15 +39,15 @@ export default async function WorksDetail({ params } : { params: { id: string } 
 
     const breadclumbsLinks: BreadcrumbItems[] = [
         { label: 'TOP', href: '/' },
-        { label: '実績一覧', href: '/works' },
-        { label: work.details.subject, href: `/works/detail/${work.details.topics_id}` },
+        { label: 'サービス一覧', href: '/services' },
+        { label: work.details.subject, href: `/services/detail/${work.details.topics_id}` },
     ]
 
     return (
         <>
             <Breadcrumbs items={breadclumbsLinks} />
             <Box px={'8vw'} m={0}>
-                <TopicLabel icon={<FaTrophy />}>{work.details.subject}</TopicLabel>
+                <TopicLabel icon={<FcServices />}>{work.details.subject}</TopicLabel>
                 <Flex mb={20}>
                     {/* {work.categories.length > 0 &&
                     work.categories.map((category: any, index: number) => (

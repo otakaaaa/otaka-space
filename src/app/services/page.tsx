@@ -1,19 +1,19 @@
 import { styles } from './page.module';
 import Breadcrumbs, { BreadcrumbItems } from '@/components/elements/breadclumbs';
 import { Flex, Stack, Divider } from '@mantine/core';
-import WorkCard from '@/components/elements/WorkCard';
+import ServiceCard from '@/components/elements/ServiceCard';
 import TopicLabel from '@/components/elements/TopicLabel';
 import { apiClient } from "@/libs/apiClient";
-import { WorksListResponseApi, WorkDetails } from '@/types/Works/Works';
-import { FaTrophy } from "react-icons/fa";
+import { ServiceListResponseApi, ServiceDetails } from '@/types/Service/Service';
+import { FcServices } from "react-icons/fc";
 
 const breadclumbsLinks: BreadcrumbItems[] = [
   { label: 'TOP', href: '/' },
-  { label: '実績一覧', href: '/works' },
+  { label: 'サービス一覧', href: '/services' },
 ];
 
-export default async function Works() {
-  const works: WorksListResponseApi = await apiClient.get('/rcms-api/1/works/list', {})
+export default async function Services() {
+  const services: ServiceListResponseApi = await apiClient.get('/rcms-api/1/services/list', {})
     .then((response) => response.data)
     .catch((error) => console.error('Error:', error));
 
@@ -22,7 +22,7 @@ export default async function Works() {
       <Breadcrumbs items={breadclumbsLinks} />
       <Flex px={'8vw'} m={0} className={styles.container}>
         <Stack className={styles.topicWrap}>
-          <TopicLabel icon={<FaTrophy />}>実績</TopicLabel>
+          <TopicLabel icon={<FcServices />}>サービス</TopicLabel>
           <Divider my={'md'} />
         </Stack>
         <Flex
@@ -33,9 +33,9 @@ export default async function Works() {
           wrap="wrap"
           className={styles.workCardWrap}
         >
-          {works.list.length > 0 &&
-          works.list.map((work: WorkDetails, index: number) => (
-            <WorkCard items={work} key={index} />
+          {services.list.length > 0 &&
+          services.list.map((work: ServiceDetails, index: number) => (
+            <ServiceCard items={work} key={index} />
           ))}
         </Flex>
       </Flex>

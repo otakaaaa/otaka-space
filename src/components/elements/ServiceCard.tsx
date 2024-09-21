@@ -3,21 +3,21 @@
 import { Card, Image, Text, Button, Stack, Box } from '@mantine/core';
 import { css } from '../../../styled-system/css';
 import { useRouter } from 'next/navigation';
-import { WorkDetails } from '@/types/Works/Works';
+import { ServiceDetails } from '@/types/Service/Service';
 import parse from 'html-react-parser';
 
 interface MyCardType {
-    items: WorkDetails;
+    items: ServiceDetails;
 }
 
-export default function WorkCard(props: MyCardType) {
+export default function ServiceCard(props: MyCardType) {
     const router = useRouter();
     const handleClick = (id: number) => {
-        router.push(`/works/detail/${id}`);
+        router.push(`/services/detail/${id}`);
     }
 
     return (
-        <Card className={css({width: '100%', md: { width: '27.559vw' }})} shadow="sm" padding="lg" radius="md" withBorder mb={30}>
+        <Card className={css({width: '100%', md: { minWidth: '280px' }})} shadow="sm" padding="lg" radius="md" withBorder mb={30}>
             <Card.Section>
                 <Image
                     src={props.items.image.url_org}
