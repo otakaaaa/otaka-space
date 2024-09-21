@@ -1,15 +1,12 @@
-import HeroSection from '@/components/layouts/HeroSection/HeroSection';
-import WorksSection from '@/components/layouts/WorksSection/WorksSection';
-import ServiceSection from '@/components/layouts/ServiceSection/ServiceSection';
-import BlogSection from '@/components/layouts/BlogSection/BlogSection';
+import AboutSection from "@/components/layouts/About/AboutSection";
+import SkillSection from "@/components/layouts/Skill/SkillSection";
 
 export default function Home() {
+
   return (
     <main>
-      <HeroSection />
-      <WorksSection />
-      <ServiceSection />
-      <BlogSection />
+      <AboutSection />
+      <SkillSection />
     </main>
   );
 }

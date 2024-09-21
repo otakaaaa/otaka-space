@@ -1,18 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import { Container, Anchor, Group, Burger, Box, Flex, Stack } from '@mantine/core';
+import { Container, Anchor, Group, Box, Flex } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { FcHome, FcServices, FcFeedback, FcNews } from "react-icons/fc";
 
 const mainLinks = [
-  { link: '/', label: 'TOP' },
-  { link: '/works', label: '実績' },
-  { link: '/#service', label: '事業内容' },
-  { link: '/#contact', label: 'お問い合わせ' },
-  { link: '/blog', label: 'ブログ' },
+  { link: '/', labelSP: <FcHome size={32} />, labelPC: 'TOP' },
+  { link: '/services', labelSP: <FcServices size={32} />, labelPC: 'サービス' },
+  { link: '#contact', labelSP: <FcFeedback size={32} />, labelPC: 'お問い合わせ' },
+  { link: '/blog', labelSP: <FcNews size={32} />, labelPC: 'ブログ' },
 ];
 
 export default function Header() {
@@ -23,7 +23,7 @@ export default function Header() {
   const mainItems = mainLinks.map((item, index) => (
     <Anchor<'a'>
       href={item.link}
-      key={item.label}
+      key={index}
       className={classes.mainLink}
       data-active={index === active || undefined}
       onClick={(event) => {
@@ -32,7 +32,7 @@ export default function Header() {
         router.push(item.link);
       }}
     >
-      {item.label}
+      {item.labelPC}
     </Anchor>
   ));
 
@@ -45,31 +45,17 @@ export default function Header() {
             {mainItems}
           </Group>
         </Box>
-        <Burger
-          opened={opened}
-          onClick={toggle}
-          style={{ zIndex: opened ? 901 : 0 }}
-          className={classes.burger}
-          size="sm"
-          hiddenFrom="sm"
-          color='#404C96'
-        />
-        {opened && (
-          <Box className={classes.smMenu} hiddenFrom="sm">
-            <div className={classes.headerInner}>
-              <Link href={'/'} className={classes.headerLogo} onClick={toggle}>OTAKA SPACE</Link>
-              <Flex>
-                <Stack miw={'50%'}>
-                  {mainLinks.map(link => (
-                    <Link href={link.link} key={link.label} onClick={toggle}>
-                      {link.label}
-                    </Link>
-                  ))}
-                </Stack>
-              </Flex>
-            </div>
-          </Box>
-        )}
+        <Box className={classes.smMenu} hiddenFrom="sm">
+          <div className={classes.headerInner}>
+            <Flex>
+              {mainLinks.map((link, index) => (
+                <Link href={link.link} key={index} onClick={toggle} className={classes.link}>
+                  {link.labelSP}
+                </Link>
+              ))}
+            </Flex>
+          </div>
+        </Box>
       </Container>
     </header>
   );

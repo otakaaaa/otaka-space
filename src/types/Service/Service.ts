@@ -1,10 +1,10 @@
-export interface WorksListResponseApi {
+export interface ServiceListResponseApi {
     errors: [],
     messages: [],
-    list: WorkDetails[],
+    list: ServiceDetails[],
 }
 
-export interface WorkDetails {
+export interface ServiceDetails {
     topics_id: number,
     ymd: string,
     contents: string,
@@ -15,8 +15,8 @@ export interface WorkDetails {
     }
 }
 
-export interface WorkDetailsResponseApi {
+export interface ServiceDetailsResponseApi {
     errors: [],
     messages: [],
-    details: WorkDetails,
+    details: ServiceDetails,
 }

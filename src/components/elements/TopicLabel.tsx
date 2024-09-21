@@ -1,5 +1,5 @@
 import { css } from "../../../styled-system/css"
-import { Text, Center } from "@mantine/core"
+import { Title, Center } from "@mantine/core"
 
 type TopicLabelType = {
     children: string,
@@ -9,12 +9,7 @@ type TopicLabelType = {
 
 export default function TopicLabel(props: TopicLabelType) {
     const textStyle = css({
-        backgroundImage: 'url(../../public/top/topic-bg-purple.png)',
-        backgroundRepeat: 'no-repeat',
-        backgroundPositionY: 'bottom',
-        backgroundSize: '100% 40%',
         padding: '0 20px !important',
-        fontSize: '22px !important',
         width: '-webkit-fill-available',
     })
 
@@ -22,13 +17,11 @@ export default function TopicLabel(props: TopicLabelType) {
         minWidth: '45px',
         minHeight: '45px',
         padding: '6px',
-        borderRadius: '50%',
-        backgroundColor: '#404C96',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         color: '#F7F8FC',
-        fontSize: '24px',
+        fontSize: '32px',
     })
 
     return (
@@ -36,7 +29,7 @@ export default function TopicLabel(props: TopicLabelType) {
             {props.icon &&
                 <div className={iconStyle}>{props.icon}</div>
             }
-            <Text className={textStyle} fw={'bold'} mb={props.mb}>{props.children}</Text>
+            <Title className={textStyle} order={3} mb={props.mb}>{props.children}</Title>
         </Center>
     )
 }
