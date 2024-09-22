@@ -3,9 +3,9 @@ import { css } from "../../../../styled-system/css"
 export const DivPC = (props: { children: React.ReactNode }) => {
     return (
         <div className={css({
-            display: 'none',
+            display: 'none !important',
             md: {
-                display: 'block',
+                display: 'block !important',
             }
         })}>
             {props.children}
