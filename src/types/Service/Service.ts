@@ -9,14 +9,18 @@ export interface ServiceDetails {
     ymd: string,
     contents: string,
     subject: string,
-    image: {
-        desc: string,
-        url_org: string,
-    }
+    link: string,
+    image: ImageType,
+    sub_images: ImageType[],
 }
 
 export interface ServiceDetailsResponseApi {
     errors: [],
     messages: [],
     details: ServiceDetails,
+}
+
+interface ImageType {
+    desc: string,
+    url_org: string,
 }

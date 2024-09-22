@@ -20,9 +20,7 @@ export default function Article(props: ArticleProps) {
     return (
         <Container bg={'#fff'} className={styles.articleContainer} onClick={handleClick}>
             <Flex>
-                <Avatar src={'/top/dummy-mainview.png'} alt="" mr={10} />
                 <Box>
-                    <Text size={'14px'} mb={10}>{'satoshi otaka'}</Text>
                     <Text size={'12px'} mb={15}>{props.items.ymd}</Text>
                     <Text size={'20px'} fw={'bold'} mb={10}>{props.items.subject}</Text>
                     <Flex mb={10}>
@@ -44,7 +42,7 @@ export default function Article(props: ArticleProps) {
 
 const styles = {
     articleContainer: css({
-        padding: '16px',
+        padding: '16px 22px !important',
         boxShadow: '0px 0px 10px #e7e8ec',
         borderRadius: '8px',
         _hover: {
@@ -52,7 +50,7 @@ const styles = {
             cursor: 'pointer',
         },
         md: {
-            padding: '16px 24px',
+            padding: '18px 24px !important',
         }
     }),
     tag: css({

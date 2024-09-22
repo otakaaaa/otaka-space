@@ -15,7 +15,7 @@ interface SkillItem {
 }
 
 export default function SkillCollapse(props: SkillCollapse) {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const styles = {
         labelWrap: css({

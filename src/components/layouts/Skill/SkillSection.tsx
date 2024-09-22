@@ -176,7 +176,7 @@ export default function SkillSection() {
                 <Box mr={8}>
                     <FcEngineering size={'34px'} />
                 </Box>
-                <Title order={1} display={'flex'}>SKILLS</Title>
+                <Title order={1} display={'flex'}>MY SKILLS</Title>
             </Flex>
             <Stack>
                 {skills}
