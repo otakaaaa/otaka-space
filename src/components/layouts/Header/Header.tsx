@@ -7,6 +7,7 @@ import classes from './Header.module.css';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { FcHome, FcServices, FcFeedback, FcNews } from "react-icons/fc";
+import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
 
 const mainLinks = [
   { link: '/', labelSP: <FcHome size={32} />, labelPC: 'TOP' },
@@ -45,11 +46,18 @@ export default function Header() {
             {mainItems}
           </Group>
         </Box>
-        <Box className={classes.smMenu} hiddenFrom="sm">
+        <div className={classes.collapseIcon} onClick={toggle} style={opened ? {bottom: 0} : {}}>
+          {opened ? (
+            <BsCaretUpFill size={24} color='#404C96' />
+          ) : (
+            <BsCaretDownFill size={24} color='#404C96' />
+          )}
+        </div>
+        <Box className={classes.smMenu} hiddenFrom="sm" style={opened ? {height: 0} : {}}>
           <div className={classes.headerInner}>
             <Flex>
               {mainLinks.map((link, index) => (
-                <Link href={link.link} key={index} onClick={toggle} className={classes.link}>
+                <Link href={link.link} key={index} className={classes.link}>
                   {link.labelSP}
                 </Link>
               ))}
