@@ -53,7 +53,7 @@ export default function Footer() {
           </ActionIcon>
         </Group>
       </div>
-      <Center py={10}>
+      <Center pt={20} pb={40}>
         <Text fz={'12px'}>&copy; 2024 OTAKA SPACE. All rights reserved.</Text>
       </Center>
     </div>
