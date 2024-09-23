@@ -18,9 +18,9 @@ export default function ServiceCard(props: MyCardType) {
                 <Group justify="space-between">
                     <Text fw={500}>{props.items.subject}</Text>
                     <Menu withinPortal position="bottom-end" shadow="sm">
-                        <ActionIcon variant="subtle" color="gray">
+                        <ActionIcon variant="subtle" color="#404C96" bg={'#DADCF1'} radius={'4px'} className={css({ _hover: {opacity: 0.8} })}>
                             <Link href={props.items.link} target='_blank'>
-                                <IconExternalLink style={{ width: rem(16), height: rem(16) }} />
+                                <IconExternalLink className={css({ width: '16px', height: '16px' })} />
                             </Link>
                         </ActionIcon>
                     </Menu>

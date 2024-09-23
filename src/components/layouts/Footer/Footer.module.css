@@ -1,0 +1,23 @@
+.footer {
+  background-color: var(--site-accent-color-1);
+  color: #fff;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px 0px 80px;
+  
+  @media (max-width: 768px) {
+    padding: 40px 25.6px 0px 25.6px;
+    flex-direction: column;
+  }
+}
+
+.links {
+  @media (max-width: 768px) {
+    margin-top: var(--mantine-spacing-lg);
+    margin-bottom: var(--mantine-spacing-sm);
+  }
+}
