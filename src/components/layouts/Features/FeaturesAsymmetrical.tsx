@@ -1,13 +1,13 @@
-import { Text, SimpleGrid, Container } from '@mantine/core';
+import { Text, SimpleGrid, Container, Box } from '@mantine/core';
 import classes from './FeaturesAsymmetrical.module.css';
-import { BsCreditCard } from "react-icons/bs";
+import { BsController } from "react-icons/bs";
 import { FaGraduationCap } from "react-icons/fa6";
-import parse from 'html-react-parser';
+import CardsCarousel from '@/components/elements/CardsCarousel';
 
 interface FeatureProps extends React.ComponentPropsWithoutRef<'div'> {
     icon: JSX.Element;
     title: string;
-    description: string;
+    description: React.ReactNode;
 }
 
 function Feature({ icon: Icon, title, description, className, ...others }: FeatureProps) {
@@ -19,9 +19,9 @@ function Feature({ icon: Icon, title, description, className, ...others }: Featu
                 <Text fw={700} fz="lg" mb="xs" mt={5} className={classes.title}>
                     {title}
                 </Text>
-                <Text c="dimmed" fz="sm">
-                    {parse(description)}
-                </Text>
+                <Box>
+                    {description}
+                </Box>
             </div>
         </div>
     );
@@ -29,14 +29,14 @@ function Feature({ icon: Icon, title, description, className, ...others }: Featu
 
 const mockdata = [
     {
-        icon: <BsCreditCard fontSize={'38px'} color='#404C96' />,
-        title: '資格',
-        description: 'Coming Soon...',
+        icon: <BsController fontSize={'38px'} color='#404C96' />,
+        title: '趣味',
+        description: <CardsCarousel />,
     },
     {
         icon: <FaGraduationCap fontSize={'38px'} color='#404C96' />,
         title: '略歴',
-        description: '1998年　宮崎県都城市生まれ<br/>2022年　宮崎大学工学部電気システム工学科 卒業<br/>2022年　日本情報クリエイト株式会社でWebエンジニアとしてキャリアをスタート<br/>2024年　株式会社はばたーくでWebエンジニアとして従事',
+        description: <>1998年12月　宮崎県都城市生まれ<br/>2022年3月　宮崎大学工学部電気システム工学科 卒業<br/>2022年4月　日本情報クリエイト株式会社でWebエンジニアとしてキャリアをスタート<br/>2024年7月　株式会社はばたーくでWebエンジニアとして従事</>,
     },
 ];
 
