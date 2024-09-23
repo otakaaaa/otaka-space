@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 const links = [
   { link: '#contact', label: 'お問い合わせ' },
-  { link: '#', label: 'プライバシーポリシー' },
+  { link: '/privacy', label: 'プライバシーポリシー' },
   { link: '/services', label: 'サービス' },
   { link: '/blog', label: 'ブログ' },
 ];
