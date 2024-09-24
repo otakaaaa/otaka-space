@@ -5,9 +5,10 @@ import {
     IconSend,
     IconCircleCheck,
 } from '@tabler/icons-react';
-import { Stepper, rem, Text, Container, Button, Box, Title, Center } from '@mantine/core';
+import { Stepper, rem, Text, Container, Button, Box, Title, Center, useMantineTheme } from '@mantine/core';
 import { css } from '../../../../styled-system/css';
 import { apiClient } from '@/libs/apiClient';
+import { useMediaQuery } from '@mantine/hooks';
 
 interface ContactConfirmationProps {
     formData: ContactFormData,
@@ -20,6 +21,8 @@ interface ContactFormData {
 }
 
 export default function ContactConfirmation(props: ContactConfirmationProps) {
+    const theme = useMantineTheme();
+    const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
     const [active, setActive] = useState(1);
     const handleSubmit = () => {
         setActive(2);
@@ -40,6 +43,7 @@ export default function ContactConfirmation(props: ContactConfirmationProps) {
             <Stepper
                 active={active}
                 completedIcon={<IconCircleCheck style={{ width: rem(18), height: rem(18) }} />}
+                orientation={mobile ? 'vertical': 'horizontal'}
             >
                 <Stepper.Step
                     icon={<IconInputCheck style={{ width: rem(18), height: rem(18) }} />}
