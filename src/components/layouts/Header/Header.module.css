@@ -118,6 +118,7 @@
     position: absolute;
     top: 0px;
     left: 35px;
+    border: none;
 }
 
 @media (max-width: 768px) {
