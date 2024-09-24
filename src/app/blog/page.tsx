@@ -39,13 +39,14 @@ export default async function Blog() {
         <Stack className={styles.topicWrap}>
           <TopicLabel icon={<FcNews />}>ブログ</TopicLabel>
           <Divider my={'md'} />
-          <DivPC>
+          {/* タグ */}
+          {/* <DivPC>
             {uniqueTags && uniqueTags.length > 0 && uniqueTags.map((tag, index) => (
               <Button key={index} className={tagStyle}>
                 {tag.label}
               </Button>
             ))}
-          </DivPC>
+          </DivPC> */}
         </Stack>
         <Stack mb={60} className={styles.articleWrap}>
           {
