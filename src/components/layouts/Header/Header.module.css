@@ -113,17 +113,16 @@
 
 .logo {
     width: 180px;
-    height: auto;
+    height: 84px;
     object-fit: cover;
     position: absolute;
-    top: -48px;
+    top: 0px;
     left: 35px;
 }
 
 @media (max-width: 768px) {
     .logo {
         width: 180px;
-        top: -40px;
         left: -20px;
     }
 }
