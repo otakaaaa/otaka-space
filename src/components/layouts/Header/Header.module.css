@@ -117,13 +117,12 @@
     object-fit: cover;
     position: absolute;
     top: 0px;
-    left: 35px;
-    border: none;
+    left: 53px;
 }
 
 @media (max-width: 768px) {
     .logo {
         width: 180px;
-        left: -20px;
+        left: 0px;
     }
 }
