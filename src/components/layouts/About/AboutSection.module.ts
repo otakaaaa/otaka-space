@@ -2,9 +2,9 @@ import { css } from "../../../../styled-system/css";
 
 export const styles = {
     section: css({
-        padding: '48px 25.6px',
+        padding: '10px 30px',
         md: {
-            padding: '40px 80px',
+            padding: '20px 80px',
         },
     }),
 }

@@ -20,7 +20,7 @@ export default async function Services() {
   return (
     <>
       <Breadcrumbs items={breadclumbsLinks} />
-      <Flex px={'8vw'} m={0} className={styles.container}>
+      <Flex m={0} className={styles.container}>
         <Stack className={styles.topicWrap}>
           <TopicLabel icon={<FcServices />}>サービス</TopicLabel>
           <Divider my={'md'} />

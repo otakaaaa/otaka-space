@@ -14,7 +14,7 @@ export type BreadcrumbItems = {
 
 export default function Breadcrumbs(props: BreadcrumbsType) {
     return (
-        <Flex my={'md'} px={'8vw'}>
+        <Flex my={'md'} className={css({ paddingX: '30px', md: {paddingX: '80px'} })}>
             {props.items.map((item, index) => (
                 <Fragment key={index}>
                     <Link href={item.href} className={styles.link}>
