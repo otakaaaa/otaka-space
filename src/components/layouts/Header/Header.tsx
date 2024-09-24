@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Container, Anchor, Group, Box, Flex, Image } from '@mantine/core';
+import { Container, Anchor, Group, Box, Flex } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
 import { useRouter } from 'next/navigation';
@@ -42,7 +42,14 @@ export default function Header() {
     <header className={classes.header}>
       <Container className={classes.inner}>
         <Link href='/'>
-          <Image src={'/common/otaka.png'} alt='OTAKA SPACE' w={90} fit='contain' />
+          <video
+            src='/common/otaka.mp4'
+            autoPlay
+            loop
+            muted
+            playsInline
+            className={classes.logo}
+          />
         </Link>
         <Box className={classes.links} visibleFrom="sm">
           <Group gap={0} justify="flex-end" className={classes.mainLinks}>
