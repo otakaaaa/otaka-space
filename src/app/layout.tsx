@@ -13,7 +13,7 @@ const theme = createTheme({
 });
 
 export const metadata: Metadata = {
-  title: "OTAKA SPACES",
+  title: "OTAKA SPACE",
   description: "エンジニア大髙のホームページです。",
 };
 
