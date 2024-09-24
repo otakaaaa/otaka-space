@@ -66,7 +66,7 @@ export function FeaturesAsymmetrical() {
     const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
 
     return (
-        <Container mt={30} mb={30} size="100%">
+        <Container mt={30} mb={30} size="100%" p={0}>
             <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
                 {items}
             </SimpleGrid>

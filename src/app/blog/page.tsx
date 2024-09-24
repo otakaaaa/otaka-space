@@ -34,7 +34,7 @@ export default async function Blog() {
   return (
     <>
       <Breadcrumbs items={breadclumbsLinks} />
-      <Flex px={'8vw'} m={0} className={styles.container}>
+      <Flex m={0} className={styles.container}>
         <Stack className={styles.topicWrap}>
           <TopicLabel icon={<FcNews />}>ブログ</TopicLabel>
           <Divider my={'md'} />

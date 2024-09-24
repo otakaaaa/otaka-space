@@ -1,4 +1,4 @@
-import { Text, Box, Flex, Badge, Image } from "@mantine/core"
+import { Text, Box, Flex, Divider } from "@mantine/core"
 import Breadcrumbs, { BreadcrumbItems } from "@/components/elements/breadclumbs"
 import TopicLabel from "@/components/elements/TopicLabel"
 import { styles } from "./page.module"
@@ -46,8 +46,9 @@ export default async function WorksDetail({ params } : { params: { id: string } 
     return (
         <>
             <Breadcrumbs items={breadclumbsLinks} />
-            <Box px={'8vw'} m={0}>
+            <Box m={0} className={styles.container}>
                 <TopicLabel icon={<FcNews />}>{article.details.subject}</TopicLabel>
+                <Divider my={'md'} />
                 <Flex mb={20}>
                     {/* {work.categories.length > 0 &&
                     work.categories.map((category: any, index: number) => (
