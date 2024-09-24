@@ -10,8 +10,9 @@ import {
     Group,
     ActionIcon,
     Modal,
+    useMantineTheme,
 } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { IconBrandX, IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react';
 import { ContactIconsList } from './ContactIcons';
 import classes from './ContactSection.module.css';
@@ -21,6 +22,8 @@ import ContactConfirmation from './ContactConfirmation';
 const social = [IconBrandX, IconBrandGithub, IconBrandInstagram];
 
 export default function ContactSection() {
+    const theme = useMantineTheme();
+    const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
     const icons = social.map((Icon, index) => (
         <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
             <Icon size="1.4rem" stroke={1.5} />
@@ -99,7 +102,7 @@ export default function ContactSection() {
                     backgroundOpacity: 0.55,
                     blur: 3,
                 }}
-                size={'80%'}
+                size={mobile ? '90%' : '60%'}
             >
                 <ContactConfirmation formData={form.getValues()} />
             </Modal>
