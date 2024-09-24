@@ -42,7 +42,7 @@ export default function Header() {
     <header className={classes.header}>
       <Container className={classes.inner}>
         <Link href='/'>
-          <Image src={'/common/OTAKA.svg'} alt='OTAKA SPACE' w={200} />
+          <Image src={'/common/otaka.png'} alt='OTAKA SPACE' w={90} fit='contain' />
         </Link>
         <Box className={classes.links} visibleFrom="sm">
           <Group gap={0} justify="flex-end" className={classes.mainLinks}>
