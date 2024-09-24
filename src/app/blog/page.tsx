@@ -7,7 +7,6 @@ import { Fragment } from 'react';
 import { apiClient } from '@/libs/apiClient';
 import { BlogListResponseApi, BlogDetail, Tag } from '@/types/Blog/blog';
 import { css } from '../../../styled-system/css';
-import { DivPC, DivSP } from '@/components/layouts/MediaQuery/MediaQuery';
 import { FcNews } from "react-icons/fc";
 
 const breadclumbsLinks: BreadcrumbItems[] = [
