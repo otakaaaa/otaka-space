@@ -6,6 +6,8 @@ import { css } from '../../../styled-system/css';
 import { ServiceDetails } from '@/types/Service/Service';
 import Link from 'next/link';
 import parse from 'html-react-parser';
+import { Carousel } from '@mantine/carousel';
+import '@mantine/carousel/styles.css';
 
 interface MyCardType {
     items: ServiceDetails;
@@ -27,21 +29,24 @@ export default function ServiceCard(props: MyCardType) {
                 </Group>
             </Card.Section>
 
-            <Text mt="sm" c="dimmed" size="sm">
+            <Text mt="md" c="dimmed" size="sm">
                 {parse(props.items.contents)}
             </Text>
 
-            <Card.Section mt="sm">
-                <Image src={props.items.image.url_org} alt={props.items.image.desc} />
-            </Card.Section>
-
-            <Card.Section inheritPadding mt="sm" pb="md">
-                <SimpleGrid cols={3}>
-                {props.items.sub_images.length > 0 &&
-                props.items.sub_images.map((image, index) => (
-                    <Image src={image.url_org} alt={image.desc} key={index} radius="sm" />
-                ))}
-                </SimpleGrid>
+            <Card.Section mt="md">
+                <Carousel
+                    slideSize={{ base: '100%', sm: '100%' }}
+                    slideGap={{ base: rem(2), sm: 'xl' }}
+                    align="start"
+                    slidesToScroll={1}
+                >
+                        {props.items.images.length > 0 &&
+                        props.items.images.map((image, index) => (
+                            <Carousel.Slide key={index} >
+                                <Image src={image.url_org} alt={image.desc} w={'100%'} h={'100%'} fit='contain' />
+                            </Carousel.Slide>
+                        ))}
+                </Carousel>
             </Card.Section>
         </Card>
     );

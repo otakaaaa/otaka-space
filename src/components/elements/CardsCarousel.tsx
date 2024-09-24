@@ -5,10 +5,6 @@ import { useMediaQuery } from '@mantine/hooks';
 import { Paper, Text, Title, useMantineTheme, rem } from '@mantine/core';
 import classes from './CardsCarousel.module.css';
 import '@mantine/carousel/styles.css';
-import Nature from '../../../public/top/nature.jpg';
-import Clothes from '../../../public/top/clothes.jpg';
-import Art from '../../../public/top/art.jpg';
-import Eat from '../../../public/top/eat.jpg';
 
 interface CardProps {
   image: string;

@@ -10,8 +10,7 @@ export interface ServiceDetails {
     contents: string,
     subject: string,
     link: string,
-    image: ImageType,
-    sub_images: ImageType[],
+    images: ImageType[],
 }
 
 export interface ServiceDetailsResponseApi {
