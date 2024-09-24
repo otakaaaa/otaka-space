@@ -46,6 +46,7 @@ const styles = {
         padding: '16px 22px !important',
         boxShadow: '0px 0px 10px #e7e8ec',
         borderRadius: '8px',
+        width: '100%',
         _hover: {
             scale: 1.01,
             cursor: 'pointer',
