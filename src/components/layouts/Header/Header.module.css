@@ -110,3 +110,20 @@
     border-top-right-radius: 6px;
     transition: bottom 0.6s ease;
 }
+
+.logo {
+    width: 180px;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: -48px;
+    left: 35px;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 180px;
+        top: -40px;
+        left: -20px;
+    }
+}
