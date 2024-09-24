@@ -21,19 +21,20 @@ export default function Article(props: ArticleProps) {
         <Container bg={'#fff'} className={styles.articleContainer} onClick={handleClick}>
             <Flex>
                 <Box>
-                    <Text size={'12px'} mb={15}>{props.items.ymd}</Text>
-                    <Text size={'20px'} fw={'bold'} mb={10}>{props.items.subject}</Text>
-                    <Flex mb={10}>
+                    <Flex mb={15}>
                         {props.items.tags &&
                         props.items.tags.length > 0 &&
                         props.items.tags.map((tag, index) => (
-                            <Text key={index} bg={'#EDEEEE'} c={'#00000099'} mr={8} px={6} className={styles.tag}>{tag.label}</Text>
+                            <Text key={index} bg={'#EDEEEE'} c={'#00000099'} mr={8} px={6} fw={700} className={styles.tag}>{tag.label}</Text>
                         ))}
                     </Flex>
-                    <Flex>
+                    <Text size={'20px'} fw={'bold'} mb={15}>{props.items.subject}</Text>
+                    <Text size={'12px'} mb={10} c={'dimmed'}>{props.items.ymd}</Text>
+                    {/* アイコン表示 */}
+                    {/* <Flex>
                         <Eye w="14" h="14" c="#00000099" />
                         <Text size={'14px'} ml={8}>{99}</Text>
-                    </Flex>
+                    </Flex> */}
                 </Box>
             </Flex>
         </Container>
