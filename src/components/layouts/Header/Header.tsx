@@ -2,13 +2,10 @@
 
 import { useState } from 'react';
 import { Container, Anchor, Group, Box, Flex, Image } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { FcHome, FcServices, FcFeedback, FcNews } from "react-icons/fc";
-import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
-import { DivSP } from '../MediaQuery/MediaQuery';
 
 const mainLinks = [
   { link: '/', labelSP: <FcHome size={32} />, labelPC: 'TOP' },
@@ -18,7 +15,6 @@ const mainLinks = [
 ];
 
 export default function Header() {
-  const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(0);
   const router = useRouter();
 
@@ -49,16 +45,7 @@ export default function Header() {
             {mainItems}
           </Group>
         </Box>
-        <DivSP>
-          <div className={classes.collapseIcon} onClick={toggle} style={opened ? {bottom: 0} : {}}>
-            {opened ? (
-              <BsCaretUpFill size={24} color='#404C96' />
-            ) : (
-              <BsCaretDownFill size={24} color='#404C96' />
-            )}
-          </div>
-        </DivSP>
-        <Box className={classes.smMenu} hiddenFrom="sm" style={opened ? {height: 0} : {}}>
+        <Box className={classes.smMenu} hiddenFrom="sm">
           <div className={classes.headerInner}>
             <Flex>
               {mainLinks.map((link, index) => (
