@@ -57,7 +57,7 @@ export default function ContactSection() {
                 <div>
                     <Title className={classes.title}>Contact me</Title>
                     <Text className={classes.description} mt="sm" mb={30}>
-                        24時間以内に折り返しご連絡いたします。
+                        当サイトについては、お問い合わせフォームもしくはメールでお問い合わせが可能です。<br/>通常平日の３営業日以内に返信いたします。
                     </Text>
                     <ContactIconsList />
                     <Group mt="xl">{icons}</Group>

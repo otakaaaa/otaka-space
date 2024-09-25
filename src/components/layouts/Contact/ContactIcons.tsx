@@ -26,7 +26,6 @@ function ContactIcon({ icon: Icon, title, description, ...others }: ContactIconP
 
 const MOCKDATA = [
     { title: 'メールアドレス', description: 'sotaka3104@gmail.com', icon: IconAt },
-    { title: '電話番号', description: '090-2960-2782', icon: IconPhone },
     { title: '住所', description: '宮崎県都城市', icon: IconMapPin },
     { title: '営業時間', description: '10:00 ~ 18:00', icon: IconSun },
 ];
