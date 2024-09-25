@@ -69,7 +69,6 @@ export default function ContactSection() {
                         required
                         classNames={{ input: classes.input, label: classes.inputLabel }}
                         key={form.key('email')}
-                        autoComplete='off'
                         {...form.getInputProps('email')}
                     />
                     <TextInput
@@ -78,7 +77,6 @@ export default function ContactSection() {
                         mt="md"
                         classNames={{ input: classes.input, label: classes.inputLabel }}
                         key={form.key('name')}
-                        autoComplete='off'
                         {...form.getInputProps('name')}
                     />
                     <Textarea
@@ -90,7 +88,6 @@ export default function ContactSection() {
                         classNames={{ input: classes.input, label: classes.inputLabel }}
                         key={form.key('body')}
                         {...form.getInputProps('body')}
-                        autoComplete='off'
                     />
                     <Group justify="flex-end" mt="md">
                         <Button onClick={handleSubmit} className={classes.control}>確認</Button>
