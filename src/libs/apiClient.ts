@@ -5,5 +5,6 @@ export const apiClient = axios.create({
     responseType: 'json',
     headers: {
         'Content-Type': 'application/json',
+        'X-RCMS-API-ACCESS-TOKEN': process.env.NEXT_PUBLIC_API_ACCESS_TOKEN
     },
 });
