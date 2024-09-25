@@ -110,11 +110,6 @@
     border-top-right-radius: 6px;
     transition: bottom 0.6s ease;
     z-index: 3;
-    opacity: 0.7;
-
-    &:hover {
-        opacity: 1;
-    }
 }
 
 .logo {
