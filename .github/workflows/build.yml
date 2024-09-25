@@ -13,6 +13,7 @@ concurrency:
 
 env:
   NEXT_PUBLIC_API_BASE_URL: https://otaka-space.g.kuroco.app
+  NEXT_PUBLIC_API_ACCESS_TOKEN: ${{ secrets.API_ACCESS_TOKEN }}
 
 jobs:
   # for Pull Request (exclude merged)
