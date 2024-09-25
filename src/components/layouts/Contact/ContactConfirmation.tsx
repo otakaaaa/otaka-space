@@ -24,17 +24,25 @@ export default function ContactConfirmation(props: ContactConfirmationProps) {
     const theme = useMantineTheme();
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
     const [active, setActive] = useState(1);
+    const [hasError, setHasError] = useState(false);
+
     const handleSubmit = () => {
+        let isError = false;
         setActive(2);
         apiClient.post('/rcms-api/1/contact', { ...props.formData })
             .then((response) => {
                 console.log('Contact form submitted successfully');
             })
             .catch((error) => {
-                console.error('Error:', error)
+                isError = true;
+                console.error('Error:', error);
             })
             .finally(() => {
-                setActive(3);
+                if (isError) {
+                    setHasError(true);
+                } else {
+                    setActive(3);
+                }
             });
     }
 
@@ -62,29 +70,46 @@ export default function ContactConfirmation(props: ContactConfirmationProps) {
                 />
             </Stepper>
             {active === 3 ? (
-                <Center p={64}>
-                    <Title order={3}>送信完了しました。</Title>
+                <Center py={24} px={6}>
+                    <Text fz={'lg'}>
+                        送信完了しました。<br/>
+                        お問い合わせありがとうございます。
+                    </Text>
                 </Center>
             ) : (
-                <Container p={'24px 0px'}>
-                    <Text>以下内容で送信します。</Text>
-                    <Text mb={32}>問題なければ、送信ボタンを押してください。</Text>
-                    <Box ml={20}>
-                        <Text mb={16}>メールアドレス：{props.formData.email}</Text>
-                        <Text mb={16}>お名前：{props.formData.name}</Text>
-                        <Text mb={32}>お問い合わせ内容：{props.formData.body}</Text>
-                    </Box>
-                    <Button
-                        className={css({
-                            float: 'right',
-                            marginBottom: '32px',
-                            marginRight: '20px',
-                        })}
-                        onClick={handleSubmit}
-                    >
-                        送信
-                    </Button>
-                </Container>
+                <>
+                    {
+                        hasError ? (
+                            <Center py={24} px={6}>
+                                <Text fz={'lg'}>
+                                    エラーが発生し、送信することができませんでした。<br/>
+                                    お手数ですが、以下メールアドレスへ直接ご連絡のほどよろしくお願いいたします。<br/>
+                                    sotaka3104@gmail.com
+                                </Text>
+                            </Center>
+                        ) : (
+                            <Container p={'24px 6px'}>
+                                <Text>以下内容で送信します。</Text>
+                                <Text mb={32}>問題なければ、送信ボタンを押してください。</Text>
+                                <Box ml={20}>
+                                    <Text mb={16}>メールアドレス：{props.formData.email}</Text>
+                                    <Text mb={16}>お名前：{props.formData.name}</Text>
+                                    <Text mb={32}>お問い合わせ内容：{props.formData.body}</Text>
+                                </Box>
+                                <Button
+                                    className={css({
+                                        float: 'right',
+                                        marginBottom: '32px',
+                                        marginRight: '20px',
+                                    })}
+                                    onClick={handleSubmit}
+                                >
+                                    送信
+                                </Button>
+                            </Container>
+                        )
+                    }
+                </>
             )}
         </>
     );
