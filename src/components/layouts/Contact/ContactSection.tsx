@@ -18,16 +18,26 @@ import { ContactIconsList } from './ContactIcons';
 import classes from './ContactSection.module.css';
 import { useForm } from '@mantine/form';
 import ContactConfirmation from './ContactConfirmation';
+import Link from 'next/link';
+import { Fragment } from 'react';
 
-const social = [IconBrandX, IconBrandGithub, IconBrandInstagram];
+const social = [
+    { Icon: IconBrandX, link: '' },
+    { Icon: IconBrandGithub, link: 'https://github.com/htk-otaka' },
+    { Icon: IconBrandInstagram, link: 'https://www.instagram.com/satoshi_otaka1203/?utm_source=web_redirect_test&ig_mid=24D3DC17-8086-4716-B7BC-C8194DB2195D&fall_back_to_web=true' }
+];
 
 export default function ContactSection() {
     const theme = useMantineTheme();
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-    const icons = social.map((Icon, index) => (
-        <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
-            <Icon size="1.4rem" stroke={1.5} />
-        </ActionIcon>
+    const icons = social.map((item, index) => (
+        <Fragment key={index}>
+            <Link href={item.link} target='_blank'>
+                <ActionIcon size={28} className={classes.social} variant="transparent">
+                    <item.Icon size="1.4rem" stroke={1.5} />
+                </ActionIcon>
+            </Link>
+        </Fragment>
     ));
     const [opened, { open, close }] = useDisclosure(false);
     const form = useForm({

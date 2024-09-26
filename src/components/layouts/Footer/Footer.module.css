@@ -21,3 +21,11 @@
     margin-bottom: var(--mantine-spacing-sm);
   }
 }
+
+.logo {
+  width: 140px;
+  height: 62px;
+  object-fit: cover;
+  background-color: var(--site-bg-color);
+  border-radius: 80px 0px;
+}
