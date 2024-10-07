@@ -15,7 +15,7 @@ const links = [
 ];
 
 const social = [
-  { Icon: IconBrandX, link: '' },
+  { Icon: IconBrandX, link: 'https://x.com/satoshi_otaka12' },
   { Icon: IconBrandGithub, link: 'https://github.com/htk-otaka' },
   { Icon: IconBrandInstagram, link: 'https://www.instagram.com/satoshi_otaka1203/?utm_source=web_redirect_test&ig_mid=24D3DC17-8086-4716-B7BC-C8194DB2195D&fall_back_to_web=true' }
 ];
